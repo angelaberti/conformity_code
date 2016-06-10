@@ -21,7 +21,7 @@ PRO z_vs_latefrac_byField, outputFormat
 	ymin = 0.2
 	ymax = 1.0
 	
-	dataAll = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	fracSFall= []
 	zbins	= []

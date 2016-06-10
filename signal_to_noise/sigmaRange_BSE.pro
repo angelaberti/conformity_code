@@ -5,7 +5,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; equal dz = 0.2; 4 z bins; dR = 0.25 Mpc
 	IF dataSet EQ 0 THEN BEGIN
-		datapath = '~/results/match_IP_sample/'
+		datapath = '~/conformity/results/match_IP_sample/'
 		zranges = ['0.2_1.0']
 		FOR i=0,3 DO zranges = [zranges, strtrim(string(0.2+0.2*i, format='(f20.1)'),1) + '_' + strtrim(string(0.2+0.2*(i+1), format='(f20.1)'),1)]
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -14,7 +14,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; equal # IP per redshift bin; 4 z bins; dR = 0.25 Mpc
 	IF dataSet EQ 1 THEN BEGIN
-		datapath = '~/results/match_IP_sample/'
+		datapath = '~/conformity/results/match_IP_sample/'
 		zranges = []
 		FOR i=1,4 DO zranges = [zranges, 'Q' + strtrim(i,1)]
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -23,7 +23,7 @@ PRO sigmaRange_BSE, dataSet
 
 ;	; equal # IP per redshift bin; 3 z bins; dR = 0.25 Mpc
 ;	IF dataSet EQ 2 THEN BEGIN
-;		datapath = '~/results/match_IP_sample/'
+;		datapath = '~/conformity/results/match_IP_sample/'
 ;		zranges = []
 ;		FOR i=1,3 DO zranges = [zranges, 'T' + strtrim(i,1)]
 ;		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -32,7 +32,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; equal # IP per redshift bin; 2 z bins; dR = 0.25 Mpc
 	IF dataSet EQ 2 THEN BEGIN
-		datapath = '~/results/match_IP_sample/'
+		datapath = '~/conformity/results/match_IP_sample/'
 		zranges = []
 		FOR i=1,2 DO zranges = [zranges, 'H' + strtrim(i,1)]
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -41,7 +41,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; equal # IP per redshift bin; 4 z bins; dR = 0.50 Mpc
 	IF dataSet EQ 3 THEN BEGIN
-		datapath = '~/results/match_IP_sample/dR_500kpc/'
+		datapath = '~/conformity/results/match_IP_sample/dR_500kpc/'
 		zranges = ['0.2_1.0']
 ;		zranges = []
 		FOR i=1,4 DO zranges = [zranges, 'Q' + strtrim(i,1)]
@@ -51,7 +51,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; equal # IP per redshift bin; 3 z bins; dR = 0.50 Mpc
 	IF dataSet EQ 4 THEN BEGIN
-		datapath = '~/results/match_IP_sample/dR_500kpc/'
+		datapath = '~/conformity/results/match_IP_sample/dR_500kpc/'
 		zranges = []
 		FOR i=1,3 DO zranges = [zranges, 'T' + strtrim(i,1)]
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -60,7 +60,7 @@ PRO sigmaRange_BSE, dataSet
 
 	; all z range; dR = 1 Mpc
 	IF dataSet EQ 5 THEN BEGIN
-		datapath = '~/results/match_IP_sample/dR_1Mpc/'
+		datapath = '~/conformity/results/match_IP_sample/dR_1Mpc/'
 		zranges = ['0.2_1.0']
 ;		FOR i=1,3 DO zranges = [zranges, 'T' + strtrim(i,1)]
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
@@ -71,14 +71,14 @@ PRO sigmaRange_BSE, dataSet
 
 	; all z range; dR = 0.25 Mpc
 	IF dataSet EQ 6 THEN BEGIN
-		datapath = '~/results/match_IP_sample/byField/'
+		datapath = '~/conformity/results/match_IP_sample/byField/'
 		zrange = '0.20_1.00'
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
 		intervals = int250kpc
 		fields = ['cdfs', 'cfhtls_xmm', 'cosmos', 'es1', 'xmm']
 
 		FOR j=0,4 DO BEGIN
-			data = MRDFITS('~/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_BSE.fits',1)
+			data = MRDFITS('~/conformity/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_BSE.fits',1)
 			fieldResults = fields[j]
 			FOR i=0,3 DO BEGIN
 				fieldResults = [fieldResults, getSigmaRange_BSE(data, intervals[0,i], intervals[1,i])]
@@ -91,16 +91,16 @@ PRO sigmaRange_BSE, dataSet
 
 	; highest redshift third; dR = 1 Mpc
 	IF dataSet EQ 7 THEN BEGIN
-;		datapath = '~/results/match_IP_sample/byField/'
-		datapath = '~/results/match_IP_sample/matchedFBF/'
+;		datapath = '~/conformity/results/match_IP_sample/byField/'
+		datapath = '~/conformity/results/match_IP_sample/matchedFBF/'
 		zrange = '0.70_1.00'
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
 		intervals = int1Mpc
 		fields = ['cdfs', 'cfhtls_xmm', 'cosmos', 'es1', 'xmm']
 
 		FOR j=0,4 DO BEGIN
-;			data = MRDFITS('~/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_dR1Mpc_BSE.fits',1)
-			data = MRDFITS('~/results/match_IP_sample/matchedFBF/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_dR1Mpc_BSE_FBF.fits',1)
+;			data = MRDFITS('~/conformity/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_dR1Mpc_BSE.fits',1)
+			data = MRDFITS('~/conformity/results/match_IP_sample/matchedFBF/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + fields[j] + '_dR1Mpc_BSE_FBF.fits',1)
 			fieldResults = fields[j]
 			FOR i=0,3 DO BEGIN
 				fieldResults = [fieldResults, getSigmaRange_BSE(data, intervals[0,i], intervals[1,i])]
@@ -113,13 +113,13 @@ PRO sigmaRange_BSE, dataSet
 
 	; all z range; 3 mass bins; dR = 1 Mpc
 	IF dataSet EQ 8 THEN BEGIN
-		datapath = '~/results/match_IP_sample/massBins/'
+		datapath = '~/conformity/results/match_IP_sample/massBins/'
 		; RADIAL RANGES OVER WHICH TO COMPUTE SIGMA
 		intervals = int1Mpc
 
 		FOR j=0,2 DO BEGIN
 			massbin = 'M' + strtrim(j+1, 1)
-			data = MRDFITS('~/results/match_IP_sample/massBins/latefrac_' + massbin + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits',1)
+			data = MRDFITS('~/conformity/results/match_IP_sample/massBins/latefrac_' + massbin + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits',1)
 			massResults = [massbin]
 			FOR i=0,3 DO BEGIN
 				massResults = [massResults, getSigmaRange_BSE(data, intervals[0,i], intervals[1,i])]

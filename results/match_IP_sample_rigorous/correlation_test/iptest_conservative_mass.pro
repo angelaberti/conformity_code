@@ -2,7 +2,7 @@
 
 PRO iptest_conservative_mass ;, zerodInputFile, dm, dz_coeff, printEvery ; finds isolated primaries in a given field
 	path = '../'
-	zerodInputRaw = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	zerodInputRaw = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	dz_coeff = 2.
 	dm = -0.5
 	printEvery = 1000
@@ -42,7 +42,7 @@ PRO iptest_conservative_mass ;, zerodInputFile, dm, dz_coeff, printEvery ; finds
 		ENDIF	
 	END
 
-;	MWRFITS, IPcands, '~/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5.fits', /CREATE
+;	MWRFITS, IPcands, '~/conformity/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5.fits', /CREATE
 ;	mwrfits, IPcands, '../allAboveMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
 ;	mwrfits, nonIPcands, '../allBelowMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
 
@@ -127,6 +127,6 @@ PRO iptest_conservative_mass ;, zerodInputFile, dm, dz_coeff, printEvery ; finds
 
 ;	mwrfits, zerodOutput, 'IP_data/zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '_dm' $
 ;					       + strtrim(strcompress(string(dm, format='(f20.1)')),1) + '.fits', /create
-	MWRFITS, zerodOutput, '~/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5_IP.fits', /CREATE
+	MWRFITS, zerodOutput, '~/conformity/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5_IP.fits', /CREATE
 
 END

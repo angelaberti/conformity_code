@@ -9,8 +9,8 @@ PRO plot_IPlatefrac_vs_environment_JKE, outputFormat, m_input;, zmin, zmax;, pts
 	!P.CHARSIZE = 1.25
 	dz_coeff = 2.0
 
-;	datapath = '~/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_'
-	datapath = '~/results/match_IP_sample_rigorous/correlation_test/conservative/neighborDataAll_'
+;	datapath = '~/conformity/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/correlation_test/conservative/neighborDataAll_'
 ;	massRanges = ['10.5_11.0', '10.0_10.5']
 	massRanges = ['10.5_11.0', '10.1_10.5']
 

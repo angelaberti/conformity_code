@@ -18,9 +18,9 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
 	zmax = 1.0
 
 	; read in data files
-;	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 1.
@@ -101,7 +101,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
 	PLOT, [xmin,xmax], [0,0], xrange=[xmin,xmax], yrange=[ymin,ymax], xtickformat='(A1)', ytitle='Signal (%)', LINESTYLE=1, THICK=2, POSITION=posArray[*,NY-1]
 
   IF (COSMOScomp EQ 1) THEN BEGIN
-	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_allz_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_allz_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsigNC	= dataNC.normsig
 	normsigNC_errors= dataNC.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
@@ -110,7 +110,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
   ENDIF ELSE BEGIN
 	LEGEND, ['z = [0.20,1.00]'], PSYM=3, COLOR=cgColor('white'), BOX=0, /TOP, /RIGHT, CHARSIZE=charsz
   ENDELSE
-	data	= MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data	= MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors	
 	OPLOT, Rplot_array[0:plotMax], normsig[0:plotMax]
@@ -136,7 +136,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
     ENDIF
 
     IF (COSMOScomp EQ 1) THEN BEGIN
-	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
+	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
 	normsigNC	= dataNC.normsig
 	normsigNC_errors= dataNC.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
@@ -152,7 +152,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
 ;	PRINT, 'SF IP: ', n_elements(UNIQ(dataIPSF.objname))
 ;	PRINT, 'Q IP:  ', n_elements(dataIPQ)
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/zBins/normsig_' + zSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/zBins/normsig_' + zSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsig[0:plotMax], COLOR=cgcolor(colors[n]), LINESTYLE=ls[n]
@@ -181,7 +181,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
     ENDIF
 
     IF (COSMOScomp EQ 1) THEN BEGIN
-	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
+	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
 	normsigNC	= dataNC.normsig
 	normsigNC_errors= dataNC.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
@@ -197,7 +197,7 @@ PRO normsigplot_JKE_IPmatchFBF_PHI37_panels, COSMOScomp, outputFormat
 ;	PRINT, 'SF IP: ', n_elements(UNIQ(dataIPSF.objname))
 ;	PRINT, 'Q IP:  ', n_elements(dataIPQ)
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/massBins/normsig_' + massSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/massBins/normsig_' + massSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsig[0:plotMax], COLOR=cgcolor(colors[n]), LINESTYLE=ls[n]

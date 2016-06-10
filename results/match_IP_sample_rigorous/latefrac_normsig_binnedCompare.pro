@@ -18,9 +18,9 @@ PRO latefrac_normsig_binnedCompare, n_bins, COSMOScomp, outputFormat
 	zmax = 1.0
 
 	; read in data files
-;	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 1.
@@ -144,14 +144,14 @@ PRO latefrac_normsig_binnedCompare, n_bins, COSMOScomp, outputFormat
 
     IF (COSMOScomp EQ 1) AND (n_bins EQ 2) THEN BEGIN
 	COSMOSbin = 'H2'
-	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_'+COSMOSbin+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
+	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_'+COSMOSbin+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
 	normsigNC	= dataNC.normsig
 	normsigNC_errors= dataNC.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
 	ERRPLOT, Rplot_array+deltaR[2], normsigNC-normsigNC_errors, normsigNC+normsigNC_errors, COLOR=cgColor('BLK5')
     ENDIF
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/zBins/normsig_' + zSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/zBins/normsig_' + zSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsig[0:plotMax], COLOR=cgcolor(colors[n]), LINESTYLE=ls[n]
@@ -185,14 +185,14 @@ PRO latefrac_normsig_binnedCompare, n_bins, COSMOScomp, outputFormat
 
     IF (COSMOScomp EQ 1) AND (n_bins EQ 2) THEN BEGIN
 	COSMOSbin = 'H2'
-	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_'+COSMOSbin+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
+	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_'+COSMOSbin+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_noCosmos.fits', 1)
 	normsigNC	= dataNC.normsig
 	normsigNC_errors= dataNC.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
 	ERRPLOT, Rplot_array+deltaR[2], normsigNC-normsigNC_errors, normsigNC+normsigNC_errors, COLOR=cgColor('BLK5')
     ENDIF
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/massBins/normsig_' + massSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/massBins/normsig_' + massSuffixArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors
 	OPLOT, Rplot_array[0:plotMax], normsig[0:plotMax], COLOR=cgcolor(colors[n]), LINESTYLE=ls[n]
@@ -233,14 +233,14 @@ PRO latefrac_normsig_binnedCompare, n_bins, COSMOScomp, outputFormat
     ENDIF
 
 ;    IF (COSMOScomp EQ 1) THEN BEGIN
-;	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_noCosmos.fits', 1)
+;	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_noCosmos.fits', 1)
 ;	normsigNC	= dataNC.normsig
 ;	normsigNC_errors= dataNC.normsig_errors
 ;	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
 ;	ERRPLOT, Rplot_array+deltaR[1], normsigNC-normsigNC_errors, normsigNC+normsigNC_errors, COLOR=cgColor('BLK5')
 ;    ENDIF
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/latefrac_' + zBinArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/latefrac_' + zBinArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
         n_tot_IPSF	= data.n_tot_IPSF
         n_late_IPSF	= data.n_late_IPSF
         errors_IPSF	= data.errors_IPSF
@@ -302,14 +302,14 @@ PRO latefrac_normsig_binnedCompare, n_bins, COSMOScomp, outputFormat
     ENDIF
 
 ;    IF (COSMOScomp EQ 1) THEN BEGIN
-;	dataNC = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_noCosmos.fits', 1)
+;	dataNC = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massBins/normsig_H2_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_noCosmos.fits', 1)
 ;	normsigNC	= dataNC.normsig
 ;	normsigNC_errors= dataNC.normsig_errors
 ;	OPLOT, Rplot_array[0:plotMax], normsigNC[0:plotMax], COLOR=cgColor('BLK5'), LINESTYLE=COSMOS_ls
 ;	ERRPLOT, Rplot_array+deltaR[1], normsigNC-normsigNC_errors, normsigNC+normsigNC_errors, COLOR=cgColor('BLK5')
 ;    ENDIF
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/'+massDir+'/latefrac_' + massBinArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/'+massDir+'/latefrac_' + massBinArray[n] + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
         n_tot_IPSF	= data.n_tot_IPSF
         n_late_IPSF	= data.n_late_IPSF
         errors_IPSF	= data.errors_IPSF

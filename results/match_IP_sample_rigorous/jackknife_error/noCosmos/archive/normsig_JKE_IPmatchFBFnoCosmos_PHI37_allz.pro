@@ -15,8 +15,8 @@ PRO normsig_JKE_IPmatchFBFnoCosmos_PHI37_allz, outputFormat
 	zmax = 1.0
 
 	; read in data files
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	allDataAllz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	allDataAllz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 1.
@@ -128,7 +128,7 @@ PRO normsig_JKE_IPmatchFBFnoCosmos_PHI37_allz, outputFormat
 		outputStruct[j] = newRow
 	ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', /CREATE
 ;  ENDFOR
 END
 

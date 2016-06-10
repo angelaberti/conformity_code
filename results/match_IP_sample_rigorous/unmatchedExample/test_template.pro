@@ -46,7 +46,7 @@ PRO test_template, outputFormat
 		THICK=1
 	ENDELSE
 
-	dataAll_allz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll_allz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	; eliminate data with targ_weight < 1
         dataAll_allz = dataAll_allz[where(dataAll_allz.targ_weight GE 1.)]
 

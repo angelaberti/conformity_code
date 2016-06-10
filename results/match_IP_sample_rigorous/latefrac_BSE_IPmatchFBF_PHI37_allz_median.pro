@@ -16,9 +16,9 @@ PRO latefrac_BSE_IPmatchFBF_PHI37_allz_median, outputFormat;, zmin, zmax;, dz_co
 	zmax = 1.0
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= .25
@@ -124,7 +124,7 @@ PRO latefrac_BSE_IPmatchFBF_PHI37_allz_median, outputFormat;, zmin, zmax;, dz_co
 	PRINT, Rproj_array
 	PRINT, (IPSF_latefrac_median_array - IPQ_latefrac_median_array)/((IPSF_latefrac_median_array + IPQ_latefrac_median_array)/2)
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_median.fits', /create
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_median.fits', /create
 ;  ENDFOR
 END
 

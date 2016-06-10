@@ -17,9 +17,9 @@ PRO IPsample_compare, var, outputFormat
 
 	!p.charsize = 2
 
-;	datapaths = [	'~/results/SF_status_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_variableMassCutoff.fits', $
-;		    	'~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
-;			'~/results/conservative+0.3dex/IP_data/zerodSFQ_IP_dz2.0_dm0.3.fits']
+;	datapaths = [	'~/conformity/results/SF_status_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_variableMassCutoff.fits', $
+;		    	'~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
+;			'~/conformity/results/conservative+0.3dex/IP_data/zerodSFQ_IP_dz2.0_dm0.3.fits']
 ;
 ;	labels = ['Variable mass limit: M13 + 0.5 (0.0) dex for SF (Q) IP','Moustakas13 mass limit','Moustakas13 + 0.3 dex']
 
@@ -33,7 +33,7 @@ PRO IPsample_compare, var, outputFormat
 
 	ERASE
 ;	FOR i=0,2 DO makeplot, datapaths[i], labels[i], xtickformat[i], xtitle[i]
-	FOR i=0,2 DO makeplot, '~/results/variable_mass+' + string_dm[i] + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits', $
+	FOR i=0,2 DO makeplot, '~/conformity/results/variable_mass+' + string_dm[i] + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits', $
 		'Variable mass limit: M13 + ' + string_dm[i] + ' (0.0) dex for SF (Q) IP', $
 		xtickformat[i], xtitle[i], var
 

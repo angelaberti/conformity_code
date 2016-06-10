@@ -18,7 +18,7 @@ PRO z_vs_IPfrac, outputFormat
 	ymin = 0.0
 	ymax = 1.0
 	
-	data = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
+	data = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
 
 	dataSF = data[where(data.SFQ eq 1)]
 	dataQ  = data[where(data.SFQ eq 0)]

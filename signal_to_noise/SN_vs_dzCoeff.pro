@@ -54,7 +54,7 @@ PRO SN_vs_dzCoeff, outputFormat ;, dm, zmin, zmax, show_legend, inputFiles
 	FOREACH dz,dz_coeffArray DO BEGIN
 		string_dzCoeff = STRTRIM(STRING(dz, format='(f20.1)'),2)
 
-		inputFile = '~/results/match_IP_sample_rigorous/jackknife_error/cylinderDepthTest/normsig_' + zrange + $
+		inputFile = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/cylinderDepthTest/normsig_' + zrange + $
 			'_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE_dzCoeff' + string_dzCoeff + '.fits'
 		data = MRDFITS(inputFile, 1)
 

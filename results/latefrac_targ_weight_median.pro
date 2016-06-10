@@ -16,7 +16,7 @@ PRO latefrac_targ_weight_median, input_dm, outputFormat;, zmin, zmax;, dz_coeff,
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+        IPdataPath = '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 
 ;	PRINT, 'Input data: ', zerodInputFile

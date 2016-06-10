@@ -15,7 +15,7 @@ PRO sigmaRange_noCosmos, dataSet
 ; 3 equal IP z bins; results for all fields together to projected radius 5 Mpc; dR = 250 kpc
   IF dataSet EQ 4 THEN BEGIN
 	intervals = int250kpc
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 ;		range = 'allz'
@@ -27,7 +27,7 @@ PRO sigmaRange_noCosmos, dataSet
 
 ; 3 0.5 dex range mass bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 3 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'halfDex'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_BSE.fits']
@@ -37,7 +37,7 @@ PRO sigmaRange_noCosmos, dataSet
 
 ; 3 equal IP mass bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 2 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalIP'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_BSE.fits']
@@ -47,7 +47,7 @@ PRO sigmaRange_noCosmos, dataSet
 
 ; 3 equal mass range bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 1 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalRange'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_BSE.fits']
@@ -58,7 +58,7 @@ PRO sigmaRange_noCosmos, dataSet
 ; 3 redshift bins with equal number IP; results for all fields together to projected radius 10 Mpc; dR = 1 Mpc
   IF dataSet EQ 0 THEN BEGIN
 	intervals = int1Mpc_to10
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_BSE.fits']

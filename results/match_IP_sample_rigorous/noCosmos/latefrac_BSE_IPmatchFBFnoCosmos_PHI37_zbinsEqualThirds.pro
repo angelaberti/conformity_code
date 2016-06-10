@@ -16,9 +16,9 @@ PRO latefrac_BSE_IPmatchFBFnoCosmos_PHI37_zbinsEqualThirds, outputFormat;, zmin,
 	zmax = 1.0
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	; ELIMINATE COSMOS FROM DATA
 	dataIPallz  = dataIPallz[where(dataIPallz.field NE 'cosmos    ')]
@@ -127,7 +127,7 @@ PRO latefrac_BSE_IPmatchFBFnoCosmos_PHI37_zbinsEqualThirds, outputFormat;, zmin,
                 outputStruct[j] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/noCosmos/latefrac_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_BSE.fits', /create
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/noCosmos/latefrac_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_BSE.fits', /create
   ENDFOR
 END
 

@@ -9,7 +9,7 @@ PRO plot_latefrac_vs_environment_JKE, outputFormat, m_input;, zmin, zmax;, ptsPe
 	!P.CHARSIZE = 1.25
 	dz_coeff = 2.0
 
-	datapath = '~/results/match_IP_sample_rigorous/correlation_test/zbins/complete/neighborDataAll_'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/correlation_test/zbins/complete/neighborDataAll_'
 	massRanges = ['10.5_11.0', '10.0_10.5']
 ;	massRanges = ['9.5_10.0']
 ;	massRanges = ['10.0_10.5']

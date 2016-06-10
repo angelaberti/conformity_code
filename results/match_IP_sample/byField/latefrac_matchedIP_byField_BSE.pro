@@ -31,14 +31,14 @@ PRO latefrac_matchedIP_byField_BSE, outputFormat;, zmin, zmax;, dz_coeff, printE
 	ymax = 1
 	yr = ymax-ymin
 
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field	
 
       FOREACH field,fields DO BEGIN
 	PRINT, field
 
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
-	dataIP  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
 
 	dataAll = dataAll[where((dataAll.targ_weight GE 1.) AND (dataAll.field EQ field))]
 	dataIP  = dataIP[where((dataIP.targ_weight GE 1.) AND (dataIP.field EQ field))]
@@ -87,7 +87,7 @@ PRO latefrac_matchedIP_byField_BSE, outputFormat;, zmin, zmax;, dz_coeff, printE
                 outputStruct[i] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample/byField/latefrac_' + decimal(zmin,2) + '_' + decimal(zmax,2) + '_targ_weight_matchedIPsample_' + strtrim(strcompress(field),2) + '_dR1Mpc_BSE.fits', /create
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample/byField/latefrac_' + decimal(zmin,2) + '_' + decimal(zmax,2) + '_targ_weight_matchedIPsample_' + strtrim(strcompress(field),2) + '_dR1Mpc_BSE.fits', /create
 
       ENDFOREACH
 END

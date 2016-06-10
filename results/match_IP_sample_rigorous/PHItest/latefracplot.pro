@@ -21,7 +21,7 @@ PRO latefracplot, outputFormat;, zmin, zmax;, dz_coeff, printEvery
 	n_annuli 	= Ceil(Rmax/dRproj)
 	printEvery	= 100
 
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	!p.multi=0
 	!p.charsize=1.25
@@ -55,9 +55,9 @@ PRO latefracplot, outputFormat;, zmin, zmax;, dz_coeff, printEvery
     ; run through all test PHI
     FOR p=0,n_elements(PHIarray)-1 DO BEGIN
 	stringPhi = strtrim(string(PHIarray[p], format='(f20.1)'), 2)
-        dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/PHItest/matchedIPsampleFBF_PHI' + stringPhi + '.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/PHItest/matchedIPsampleFBF_PHI' + stringPhi + '.fits', 1)
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/PHItest/latefrac_T' + strtrim(string(i+1, format='(i20)'),2) + '_targ_weight_IPmatchFBF_PHI' + stringPhi + '_dR1Mpc_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/PHItest/latefrac_T' + strtrim(string(i+1, format='(i20)'),2) + '_targ_weight_IPmatchFBF_PHI' + stringPhi + '_dR1Mpc_BSE.fits', 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF
 	n_late_IPSF = data.n_late_IPSF

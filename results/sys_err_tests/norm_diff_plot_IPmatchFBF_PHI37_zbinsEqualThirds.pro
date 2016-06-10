@@ -1,10 +1,10 @@
 PRO norm_diff_plot_IPmatchFBF_PHI37_zbinsEqualThirds, dR, COSMOScompare, outputFormat
 	string_dR = 'dR1Mpc'
-	datapath = '~/results/match_IP_sample_rigorous/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/'
 
 	IF (dR EQ 250.) THEN BEGIN
 		string_dR = 'dR250kpc'
-		datapath = '~/results/match_IP_sample_rigorous/dR_250kpc/'
+		datapath = '~/conformity/results/match_IP_sample_rigorous/dR_250kpc/'
 	ENDIF
 
 	IF (string(outputFormat) eq 'ps') THEN BEGIN

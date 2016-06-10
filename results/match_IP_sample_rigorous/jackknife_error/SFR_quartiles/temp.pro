@@ -17,7 +17,7 @@ PRO temp, zbin
 ;	zbin = 0.1
 	zarray = 0.2+FINDGEN(CEIL(0.8/zbin)+1)*zbin
 
-	zerodSFQ_cart = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	zerodSFQ_cart = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = zerodSFQ_cart[uniq(zerodSFQ_cart.field, sort(zerodSFQ_cart.field))].field
 
 	ERASE
@@ -73,5 +73,5 @@ PRO temp, zbin
 	PRINT, MEDIAN(dataTrimmed[WHERE(dataTrimmed.SFQ EQ 1)].mstar)
 	PRINT, MEDIAN(dataTrimmed[WHERE(dataTrimmed.SFQ EQ 0)].mstar)
 
-	MWRFITS, dataTrimmed, '~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF.fits'
+	MWRFITS, dataTrimmed, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF.fits'
 END

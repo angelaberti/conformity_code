@@ -1,5 +1,5 @@
 PRO num_density
-	data 	= mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	data 	= mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields 	= data[uniq(data.field, sort(data.field))].field
 	
 	total_pyr_height = dcomovinglos(1., /Mpc)/(1 + 1.)

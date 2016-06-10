@@ -7,7 +7,7 @@
 
 PRO matchSamples_FBF, outputFormat
 	seed = 1
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 	dataIPallFields = dataAll[where(dataAll.IP eq 1)]
 
 	fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field

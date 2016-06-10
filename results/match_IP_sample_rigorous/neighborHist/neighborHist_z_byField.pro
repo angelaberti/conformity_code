@@ -7,8 +7,8 @@ PRO neighborHist_z_byField, binwidth, outputFormat
 	zmax = 1.0
 
 	; read in data files
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 0.25
@@ -57,7 +57,7 @@ PRO neighborHist_z_byField, binwidth, outputFormat
 		THICK=1
 	ENDELSE
 
-	zerodSFQ_cart = MRDFITS('~/results/zerodSFQ_all_cart.fits',1)
+	zerodSFQ_cart = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits',1)
 	fields = zerodSFQ_cart[uniq(zerodSFQ_cart.field, sort(zerodSFQ_cart.field))].field
 
 	ERASE

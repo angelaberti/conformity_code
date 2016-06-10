@@ -3,7 +3,7 @@ PRO stats
 	zmax = 1.0
 
 	; read in data files
-        dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 
 	; eliminate data with targ_weight < 1
         dataIPallz  = dataIPallz[where(dataIPallz.targ_weight GE 1.)]

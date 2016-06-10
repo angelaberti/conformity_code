@@ -14,8 +14,8 @@ PRO normsig_JKE_IPmatchFBF_PHI37_massThirdsEqualIP, outputFormat
 	zmax = 1.0
 
 	; read in data files
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	allDataAllz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	allDataAllz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	plotMax		= 4
@@ -127,7 +127,7 @@ PRO normsig_JKE_IPmatchFBF_PHI37_massThirdsEqualIP, outputFormat
 		outputStruct[j] = newRow
 	ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/massThirds/normsig_' + massSuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/massThirds/normsig_' + massSuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', /CREATE
   ENDFOR
 END
 

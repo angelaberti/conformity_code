@@ -5,8 +5,8 @@ PRO latefrac_matchedIP_zbins, outputFormat;, zmin, zmax;, dz_coeff, printEvery
 	zmin = 0.2
 	zmax = 1.0
 
-        dataIPallz  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 0.25
@@ -82,7 +82,7 @@ PRO latefrac_matchedIP_zbins, outputFormat;, zmin, zmax;, dz_coeff, printEvery
 	                outputStruct[j] = newRow
 	        ENDFOR
 
-		MWRFITS, outputStruct, '~/results/match_IP_sample/latefrac_' + zsuffix  + '_targ_weight_matchedIPsample.fits', /create
+		MWRFITS, outputStruct, '~/conformity/results/match_IP_sample/latefrac_' + zsuffix  + '_targ_weight_matchedIPsample.fits', /create
 
 		IF (string(outputFormat) eq 'ps') THEN PS_CLOSE
 		SET_PLOT, 'X'

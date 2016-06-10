@@ -1,8 +1,8 @@
 ; T1 lowest masses, T3 highest masses
 
 PRO massdiv_thirds
-;	data	= mrdfits('~/results/variable_mass+' + string_dm + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits',1)
-	dataIP	= MRDFITS('~/results/match_IP_sampe_rigorous/matchedIPsampleFBF_M13highMassCut.fits', 1)
+;	data	= mrdfits('~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits',1)
+	dataIP	= MRDFITS('~/conformity/results/match_IP_sampe_rigorous/matchedIPsampleFBF_M13highMassCut.fits', 1)
 
 	; initialize
 	dataIP_T1 = []
@@ -29,7 +29,7 @@ PRO massdiv_thirds
 	PRINT, n_elements(dataIP_T2)
 	PRINT, n_elements(dataIP_T3)
 
-	MWRFITS, dataIP_T1, '~/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T1.fits', /CREATE
-	MWRFITS, dataIP_T2, '~/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T3.fits', /CREATE
-	MWRFITS, dataIP_T3, '~/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T3.fits', /CREATE
+	MWRFITS, dataIP_T1, '~/conformity/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T1.fits', /CREATE
+	MWRFITS, dataIP_T2, '~/conformity/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T3.fits', /CREATE
+	MWRFITS, dataIP_T3, '~/conformity/results/match_IP_sample_rigorous/mass_bins/IP_data/matchedIPsampleFBF_M13highMassCut_T3.fits', /CREATE
 END

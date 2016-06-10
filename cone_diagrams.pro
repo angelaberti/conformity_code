@@ -9,7 +9,7 @@ PRO cone_diagrams, outputFormat
 ;	!x.margin=[8,2.5]; left, right
 ;	!y.margin=[4,2] ; bottom, top
 
-	data = mrdfits('~/results/zerodSFQ_all_cart.fits',1)
+	data = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits',1)
 
 ;	fields = data[uniq(data.field, sort(data.field))].field
 	fields = ['xmm       ','cfhtls_xmm','es1       ','cosmos    ','cdfs      ']

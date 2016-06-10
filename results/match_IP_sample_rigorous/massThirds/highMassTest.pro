@@ -1,7 +1,7 @@
 PRO highMassTest, outputFormat
 ; read in data files
-        dataIPallFields  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataAllallFields = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallFields  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataAllallFields = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 ; eliminate data with targ_weight < 1
         dataIPallFields  = dataIPallFields[where(dataIPallFields.targ_weight GE 1.)]

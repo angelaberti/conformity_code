@@ -9,11 +9,11 @@ PRO latefrac_matchedIP_byField_BSE_highzThird_FBF, outputFormat;, zmin, zmax;, d
 		THICK=1
 	ENDELSE
 
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field	
 
 ;	dataAllallz = dataAll[where(dataAll.targ_weight GE 1.)]
-	dataIPallz  = MRDFITS('~/results/match_IP_sample/matchedFBF/matchedIPsample_FBF.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample/matchedFBF/matchedIPsample_FBF.fits', 1)
         dataIPallz  = dataIPallz[where(dataIPallz.targ_weight GE 1.)]
 
         orderedRedshifts = dataIPallz[SORT(dataIPallz.zprimus)].zprimus
@@ -57,8 +57,8 @@ PRO latefrac_matchedIP_byField_BSE_highzThird_FBF, outputFormat;, zmin, zmax;, d
       FOREACH field,fields DO BEGIN
 	PRINT, field
 
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
-	dataIP  = MRDFITS('~/results/match_IP_sample/matchedFBF/matchedIPsample_FBF.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/match_IP_sample/matchedFBF/matchedIPsample_FBF.fits', 1)
 
 	dataAll = dataAll[where((dataAll.targ_weight GE 1.) AND (dataAll.field EQ field) AND (dataAll.zprimus GE zmin))]
 	dataIP  = dataIP[where((dataIP.targ_weight GE 1.) AND (dataIP.field EQ field) AND (dataIP.zprimus GE zmin))]
@@ -107,7 +107,7 @@ PRO latefrac_matchedIP_byField_BSE_highzThird_FBF, outputFormat;, zmin, zmax;, d
                 outputStruct[i] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample/matchedFBF/latefrac_' + decimal(zmin,2) + '_' + decimal(zmax,2) + '_targ_weight_matchedIPsample_' + strtrim(strcompress(field),2) + string_dR + '_BSE_FBF.fits', /create
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample/matchedFBF/latefrac_' + decimal(zmin,2) + '_' + decimal(zmax,2) + '_targ_weight_matchedIPsample_' + strtrim(strcompress(field),2) + string_dR + '_BSE_FBF.fits', /create
 
       ENDFOREACH
 END

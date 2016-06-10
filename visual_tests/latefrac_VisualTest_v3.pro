@@ -18,7 +18,7 @@ PRO latefrac_VisualTest_v3, outputFormat;, z, dz, plotEvery
 ;	!x.margin=[3,4] ; left, right
 ;	!y.margin=[3.5,1] ; bottom, top
 
-	data = mrdfits('~/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits', 1)
+	data = mrdfits('~/conformity/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits', 1)
 	dataIP  = data[where(data.IP eq 1)]	
 
 ;	IP_index = 1

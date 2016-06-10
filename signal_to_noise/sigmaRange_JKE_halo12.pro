@@ -5,7 +5,7 @@ PRO sigmaRange_JKE_halo12, dataSet
 
 	intervals = [ [0,0], [1,3], [4,5] ]
 
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/halo12/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/halo12/'
 
   datafiles = [ $
 	'normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE_halo12.fits', $

@@ -22,12 +22,12 @@ PRINTF, unit, '}'
 
 PRINTF, unit, '\startdata'
 
-	dataJKE = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits',1)
+	dataJKE = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits',1)
 
-	IPdataAll = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPdataAll = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 
   FOR f=0,n_elements(fields)-1 DO BEGIN
-	datafileField	= '~/results/match_IP_sample_rigorous/fields/latefrac_allz_' $
+	datafileField	= '~/conformity/results/match_IP_sample_rigorous/fields/latefrac_allz_' $
 			+ fields[f] + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits'
 	IPdata = IPdataAll[WHERE( (STRTRIM(IPdataAll.field,2) EQ fields[f]) AND (IPdataAll.targ_weight GE 1.) )]
 	PRINT, f, n_elements(IPdata)

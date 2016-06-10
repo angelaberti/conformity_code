@@ -12,7 +12,7 @@ PRO sigmaRange_BSE_halo12, dataSet
 		      [1,3], $
 		      [4,5] ]
 
-	datapath = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/'
 
 	datafiles = [ $
 		'latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE_halo12.fits', $

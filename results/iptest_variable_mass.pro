@@ -4,7 +4,7 @@
 PRO iptest_variable_mass, input_dm ;, zerodInputFile, dz_coeff, printEvery ; finds isolated primaries in a given field
 	string_dm = strtrim(strcompress(string(input_dm, format='(f20.1)')), 1)
 
-	zerodInputRaw = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	zerodInputRaw = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	dz_coeff = 2.
 	printEvery = 100
 	
@@ -25,8 +25,8 @@ PRO iptest_variable_mass, input_dm ;, zerodInputFile, dz_coeff, printEvery ; fin
 ; make initial mass cut based on field, z, and star-forming status to get sample to test for IP status
 	IPcands    = []
 	nonIPcands = []
-;	IPcands    = mrdfits('~/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
-;	nonIPcands = mrdfits('~/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+;	IPcands    = mrdfits('~/conformity/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+;	nonIPcands = mrdfits('~/conformity/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
 
 	FOR i=0,n_elements(zerodInput)-1 DO BEGIN
 		IF (zerodInput[i].SFQ eq 1) THEN (dm = input_dm) ELSE (dm = 0.0)
@@ -45,8 +45,8 @@ PRO iptest_variable_mass, input_dm ;, zerodInputFile, dz_coeff, printEvery ; fin
 		ENDIF	
 	END
 
-	mwrfits, IPcands, '~/results/allAboveMassCompLim_var' + string_dm + 'dex.fits', /create
-	mwrfits, nonIPcands, '~/results/allBelowMassCompLim_var' + string_dm + 'dex.fits', /create
+	mwrfits, IPcands, '~/conformity/results/allAboveMassCompLim_var' + string_dm + 'dex.fits', /create
+	mwrfits, nonIPcands, '~/conformity/results/allBelowMassCompLim_var' + string_dm + 'dex.fits', /create
 
 	PRINT, 'IPcands:', n_elements(IPcands)
 	PRINT, 'nonIPcands:', n_elements(nonIPcands)
@@ -125,6 +125,6 @@ PRO iptest_variable_mass, input_dm ;, zerodInputFile, dz_coeff, printEvery ; fin
 
 ;	IF outputIndex ne n_elements(zerodInput_zcut) THEN message, 'outputIndex mismatch'
 
-	mwrfits, zerodOutput, '~/results/variable_mass+' + strtrim(strcompress(string(input_dm, format='(f20.1)')),1) $
+	mwrfits, zerodOutput, '~/conformity/results/variable_mass+' + strtrim(strcompress(string(input_dm, format='(f20.1)')),1) $
 		+ 'dex/IP_data/zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits', /create
 END

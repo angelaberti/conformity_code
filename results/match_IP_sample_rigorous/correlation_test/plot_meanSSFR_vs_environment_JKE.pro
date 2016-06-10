@@ -9,7 +9,7 @@ PRO plot_meanSSFR_vs_environment_JKE, outputFormat;, ptsPerBin, dR
 	!P.CHARSIZE = 1.25
 	dz_coeff = 2.0
 
-	datapath = '~/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_'
 ;	massRanges = ['11.0_11.5', '10.5_11.0', '10.0_10.5', '9.5_10.0']
 	massRanges = ['10.5_11.0', '10.0_10.5']
 

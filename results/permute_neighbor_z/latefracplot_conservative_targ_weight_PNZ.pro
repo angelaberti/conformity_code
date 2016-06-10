@@ -17,7 +17,7 @@ PRO latefracplot_conservative_targ_weight_PNZ, outputFormat;, zmin, zmax;, dz_co
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/conservative_mass_cutoff/IP_data/'
+        IPdataPath = '~/conformity/results/conservative_mass_cutoff/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '_dm0.0.fits'
 
 	PRINT, 'Input data: ', zerodInputFile
@@ -43,7 +43,7 @@ PRO latefracplot_conservative_targ_weight_PNZ, outputFormat;, zmin, zmax;, dz_co
 	ymax = 1
 	yr = ymax-ymin
 
-	data = mrdfits('~/results/permute_neighbor_z/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_targ_weight_' + zerodInputFile, 1)
+	data = mrdfits('~/conformity/results/permute_neighbor_z/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_targ_weight_' + zerodInputFile, 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF
 	n_late_IPSF = data.n_late_IPSF

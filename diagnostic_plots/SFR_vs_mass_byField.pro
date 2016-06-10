@@ -1,5 +1,5 @@
 PRO SFR_vs_mass_byField, field, outputFormat
-	dataAll = mrdfits('~/results/zerodSFQ_all_cart.fits',1)
+	dataAll = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits',1)
 
 	string_field = strtrim(strcompress(field),2)
 	data = dataAll[where(strtrim(strcompress(dataAll.field),2) EQ string_field)]		

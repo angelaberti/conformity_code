@@ -18,9 +18,9 @@ PRO latefracplot_BSE_IPmatchFBF_PHI37_massThirds, outputFormat;, zmin, zmax;, dz
 	zmax = 1.0
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	plotMax 	= Rmax-1
@@ -114,7 +114,7 @@ PRO latefracplot_BSE_IPmatchFBF_PHI37_massThirds, outputFormat;, zmin, zmax;, dz
 ;	dataIP  = dataIPallz
 ;	dataAll = dataAllallz
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/massThirds/latefrac_M' + strtrim(string(i+1, format='(i20)'),2) + massSuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/massThirds/latefrac_M' + strtrim(string(i+1, format='(i20)'),2) + massSuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF
 	n_late_IPSF = data.n_late_IPSF

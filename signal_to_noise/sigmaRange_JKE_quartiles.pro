@@ -6,7 +6,7 @@ PRO sigmaRange_JKE_quartiles
 	fields	  = ['cdfs', 'cfhtls_xmm', 'cosmos', 'es1', 'xmm']
 	intervals = int1Mpc ; default
 
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/'
 	datafiles = [$;datapath + 'normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits', $
 		datapath + 'SFR_quartiles/normsig_matchedIPsampleFBF_highLowQuarts.fits']
 ;		datapath + 'SFR_quartiles/normsig_matchedIPsampleFBF_allIPlowuarts.fits', $

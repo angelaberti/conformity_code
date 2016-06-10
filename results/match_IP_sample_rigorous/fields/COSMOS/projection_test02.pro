@@ -2,8 +2,8 @@ PRO projection_test02, outputFormat
 	dz_coeff = 2.0
 
 	; read in data files
-	dataIP  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	SFcolor = cgColor('blue')
 	Qcolor  = cgColor('red')

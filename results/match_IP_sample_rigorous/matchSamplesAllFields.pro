@@ -12,7 +12,7 @@ PRO matchSamplesAllFields, outputFormat
 	        SET_PLOT, 'X'
 	ENDELSE
 
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 	data = dataAll[where(dataAll.IP eq 1)]
 		
 	!P.MULTI = 0
@@ -161,7 +161,7 @@ PRO matchSamplesAllFields, outputFormat
 
 	allIP = [QsampleAll, SFselectAll]
 
-	MWRFITS, allIP, '~/results/match_IP_sample_rigorous/matchedIPsample_M13highMassCut.fits', /CREATE
+	MWRFITS, allIP, '~/conformity/results/match_IP_sample_rigorous/matchedIPsample_M13highMassCut.fits', /CREATE
 
 ;	FOR i=0,n_elements(xpts)-1 DO OPLOT, [xpts[i],xpts[i]], [min(ypts),max(ypts)], LINESTYLE=1, THICK=2
 ;	FOR j=0,n_elements(ypts)-1 DO OPLOT, [min(xpts),max(xpts)], [ypts[j],ypts[j]], LINESTYLE=1, THICK=2

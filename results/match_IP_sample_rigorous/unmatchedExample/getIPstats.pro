@@ -1,5 +1,5 @@
 PRO getIPstats
-	path = '~/results/'
+	path = '~/conformity/results/'
 
 	IPdatafiles = [ $
 	path+'default_parameters/IP_data/zerodSFQ_IP_dz2.0_dm0.5.fits', $

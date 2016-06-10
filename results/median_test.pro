@@ -1,6 +1,6 @@
 PRO median_test
 	string_dm = '0.5'
-	topLevel = '~/results/variable_mass+' + string_dm + 'dex/'
+	topLevel = '~/conformity/results/variable_mass+' + string_dm + 'dex/'
 
 	RESTORE, topLevel + 'latefrac_annulus_array_IPSF.sav'
 	latefrac_array_IPSF = IP_latefrac_array

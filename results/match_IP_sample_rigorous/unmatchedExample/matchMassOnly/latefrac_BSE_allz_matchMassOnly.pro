@@ -4,13 +4,13 @@
 ; BSE:		uses bootstrap error method
 
 PRO latefrac_BSE_allz_matchMassOnly, outputFormat;, zmin, zmax;, dz_coeff, printEvery
-  IPdatafiles = ['~/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits']
-;	'~/results/default_parameters/IP_data/zerodSFQ_IP_dz2.0_dm0.5.fits', $
-;	'~/results/single_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_singleMass.fits', $
-;	'~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
-;	'~/results/conservative+0.3dex/IP_data/zerodSFQ_IP_dz2.0_dm0.3.fits']
-;	'~/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits']
-;	'~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits']
+  IPdatafiles = ['~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits']
+;	'~/conformity/results/default_parameters/IP_data/zerodSFQ_IP_dz2.0_dm0.5.fits', $
+;	'~/conformity/results/single_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_singleMass.fits', $
+;	'~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
+;	'~/conformity/results/conservative+0.3dex/IP_data/zerodSFQ_IP_dz2.0_dm0.3.fits']
+;	'~/conformity/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits']
+;	'~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits']
 
 ;  titles = ['Default Parameters', 'Variable Mass Cutoff (+1.0 dex for SF)']
 ;  tags = ['default', 'var1.0dex'] ; DONE
@@ -55,7 +55,7 @@ PRO latefrac_BSE_allz_matchMassOnly, outputFormat;, zmin, zmax;, dz_coeff, print
 		THICK=1
 	ENDELSE
 
-	dataAll_allz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll_allz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	; eliminate data with targ_weight < 1
         dataAll_allz = dataAll_allz[where(dataAll_allz.targ_weight GE 1.)]
 
@@ -123,7 +123,7 @@ PRO latefrac_BSE_allz_matchMassOnly, outputFormat;, zmin, zmax;, dz_coeff, print
 		outputStruct[j] = newRow
 	ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/unmatchedExample/latefrac_' + tags[i] + '_allz' + string_dR + '_BSE.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/latefrac_' + tags[i] + '_allz' + string_dR + '_BSE.fits', /CREATE
   ENDFOR
 END
 

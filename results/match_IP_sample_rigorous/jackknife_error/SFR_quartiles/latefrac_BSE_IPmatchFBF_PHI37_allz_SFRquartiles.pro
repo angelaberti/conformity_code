@@ -7,8 +7,8 @@ PRO latefrac_BSE_IPmatchFBF_PHI37_allz_SFRquartiles, outputFormat;, zmin, zmax;,
 	zmax = 1.0
 
 	; read in data files
-	allDataAllz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	allDataAllz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
 	IPdataAllz  = IPdataAllz[WHERE(IPdataAllz.IP EQ 1)]
 
 	Rmax 		= 10.
@@ -102,7 +102,7 @@ PRO latefrac_BSE_IPmatchFBF_PHI37_allz_SFRquartiles, outputFormat;, zmin, zmax;,
                 outputStruct[j] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/latefrac_BSE_quart'+STRTRIM(i+1,2)+'.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/latefrac_BSE_quart'+STRTRIM(i+1,2)+'.fits', /CREATE
   ENDFOR
 	IF (string(outputFormat) eq 'ps') THEN PS_CLOSE
 	SET_PLOT, 'X'

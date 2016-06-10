@@ -26,33 +26,33 @@ PRO latefrac_BSE_allz_halo12, set
 ; Matched M* and Redshift
 ; 
   IF (set EQ 0) THEN BEGIN
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
 	zsuffix = 'allz'
-	outputPath = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12.fits'
+	outputPath = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12.fits'
   ENDIF
 
 ; No Matching
 ; 
   IF (set EQ 1) THEN BEGIN
-	dataIPallz  = MRDFITS('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
-	outputPath = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_conservative_allz_dR1Mpc_BSE.fits'
+	dataIPallz  = MRDFITS('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
+	outputPath = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_conservative_allz_dR1Mpc_BSE.fits'
   ENDIF
 
 ; Matched Redshift Only
 ;
   IF (set EQ 2) THEN BEGIN
-	dataIPallz  = MRDFITS('~/results/single_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_singleMass.fits', 1)
-	outputPath = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_singleMass_allz_dR1Mpc_BSE.fits'
+	dataIPallz  = MRDFITS('~/conformity/results/single_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_singleMass.fits', 1)
+	outputPath = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_singleMass_allz_dR1Mpc_BSE.fits'
   ENDIF
 
 ; Matched M* Only
 ;
   IF (set EQ 3) THEN BEGIN
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', 1)
-	outputPath = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_matchMassOnly_allz_dR1Mpc_BSE.fits'
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', 1)
+	outputPath = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_matchMassOnly_allz_dR1Mpc_BSE.fits'
   ENDIF
 
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 ; eliminate data with targ_weight < 1
         dataAllallz = dataAllallz[where(dataAllallz.targ_weight GE 1.)]
@@ -124,7 +124,7 @@ PRO latefrac_BSE_allz_halo12, set
 	
 	PRINT, outputStruct
 
-;	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12.fits', /create
+;	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12.fits', /create
 	MWRFITS, outputStruct, outputPath, /CREATE
 END
 

@@ -6,7 +6,7 @@ PRO make_ubertable_dR1Mpc
 ;	int = [ [0,0], [1,3], [4,5] ]
 	int = [ [0,0], [1,2], [3,4] ]
 
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/'
 
   datafiles = [ $
 	'normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits', $
@@ -26,7 +26,7 @@ PRO make_ubertable_dR1Mpc
 	'massBins/normsig_T3_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits' $
   ]
 
-	datapathBSE = '~/results/match_IP_sample_rigorous/'
+	datapathBSE = '~/conformity/results/match_IP_sample_rigorous/'
 
   datafilesBSE = [ $
         'latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', $
@@ -80,7 +80,7 @@ PRINTF, unit, '}'
 
 PRINTF, unit, '\startdata'
 
-	IPdata = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPdata = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 
 	data	= MRDFITS(datapath + datafiles[0], 1)
 	dataBSE = MRDFITS(datapathBSE + datafilesBSE[0], 1)

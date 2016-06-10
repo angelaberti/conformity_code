@@ -5,8 +5,8 @@ PRO projection_test04, outputFormat
 	zmax = 1.
 
 	; read in data files
-	dataIP  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	dataAll	  = dataAll[where( (dataAll.field EQ 'cosmos    ') AND (dataAll.zprimus GE zmin) AND (dataAll.zprimus LE zmax) )]
 	dataAllSF = dataAll[where(dataAll.SFQ EQ 1)]

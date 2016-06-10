@@ -17,7 +17,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 0 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/zThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/zThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 		datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits']
@@ -29,7 +29,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together EXCEPT COSMOS to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 1 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/zThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 		datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_JKE.fits']
@@ -41,7 +41,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 2 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/'
 	range = 'allz'
 	datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits']
 	ranges = range 
@@ -51,7 +51,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together EXCEPT COSMOS to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 3 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/'
 	range = 'allz'
 	datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_JKE.fits']
 	ranges = range
@@ -62,7 +62,7 @@ PRO sigmaRange_JKE, dataSet
 ; dR = 0.25 Mpc
   IF dataSet EQ 4 THEN BEGIN
 	intervals = int250kpc
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/'
 	range = 'allz'
 	datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR250kpc_JKE.fits']
 	ranges = range 
@@ -72,7 +72,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 5 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalIP'
 		datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits']
@@ -84,7 +84,7 @@ PRO sigmaRange_JKE, dataSet
 ; results for ALL FIELDS together EXCEPT COSMOS to projected radius 5 Mpc
 ; dR = 1 Mpc
   IF dataSet EQ 6 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalIP'
 		datafiles = [datafiles, 'normsig_' + range + '_targ_weight_IPmatchFBFnoCosmos_PHI3.7_dR1Mpc_JKE.fits']

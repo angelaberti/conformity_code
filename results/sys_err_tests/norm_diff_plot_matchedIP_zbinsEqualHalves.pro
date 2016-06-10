@@ -35,7 +35,7 @@ PRO norm_diff_plot_matchedIP_zbinsEqualHalves, outputFormat
 		IF i EQ 0 THEN zrange = '0.2_1.0' $
 	;	ELSE zrange = strtrim(string(0.2 + 0.2*(i-1), format='(f20.1)'),1) + '_' + strtrim(string(0.2 + 0.2*(i), format='(f20.1)'),1)
 		ELSE zrange = 'H' + strtrim(i,1)
-		data = MRDFITS('~/results/match_IP_sample/latefrac_' + zrange + '_targ_weight_matchedIPsample_BSE.fits', 1)
+		data = MRDFITS('~/conformity/results/match_IP_sample/latefrac_' + zrange + '_targ_weight_matchedIPsample_BSE.fits', 1)
 
 		Rmin		= data.rmin
 		Rmax		= data.rmax

@@ -13,7 +13,7 @@ PRO plot_latefrac, ptsPerBin, dR
 	targPhi = -3.7
 	stringPHI = strtrim(string(-1.*targPhi, format='(f20.1)'), 2)
 
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 	dataAll	= dataAll[WHERE(dataAll.targ_weight GE 1.)]
 	dataIP	= dataAll[WHERE(dataAll.IP EQ 1)]
 
@@ -25,7 +25,7 @@ PRO plot_latefrac, ptsPerBin, dR
 
 ;	'dist', 'IP_SSFRcorr', 'neigh_SSFRcorr'
 
-	neighData = MRDFITS('~/results/match_IP_sample_rigorous/correlation_test/neighborData_10.0_10.5.fits', 1)
+	neighData = MRDFITS('~/conformity/results/match_IP_sample_rigorous/correlation_test/neighborData_10.0_10.5.fits', 1)
 
 ;	PRINT, MINMAX(neighData.dist)
 	Rmin = 0.

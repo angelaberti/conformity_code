@@ -16,8 +16,8 @@ PRO normsigplot_zbins_1halo, outputFormat
         IF dRproj EQ 1.00 THEN string_dR = '_dR1Mpc'
 
 ; Matched M* and Redshift
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 ; eliminate data with targ_weight < 1
         dataAllallz = dataAllallz[where(dataAllallz.targ_weight GE 1.)]
@@ -65,7 +65,7 @@ PRO normsigplot_zbins_1halo, outputFormat
 	PSYMS	= [-4,-5,-6,-1,-2]
 
   FOR h=0,1 DO BEGIN
-	datafile = '~/results/match_IP_sample_rigorous/fields/XMM-SXDS/latefrac_H'+STRTRIM(h,2)+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits'
+	datafile = '~/conformity/results/match_IP_sample_rigorous/fields/XMM-SXDS/latefrac_H'+STRTRIM(h,2)+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits'
 	data = MRDFITS(datafile, 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF
@@ -99,7 +99,7 @@ PRO normsigplot_zbins_1halo, outputFormat
   ENDFOR
 
   FOR q=0,3 DO BEGIN
-	datafile = '~/results/match_IP_sample_rigorous/fields/XMM-SXDS/latefrac_Q'+STRTRIM(q,2)+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits'
+	datafile = '~/conformity/results/match_IP_sample_rigorous/fields/XMM-SXDS/latefrac_Q'+STRTRIM(q,2)+'_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits'
 	data = MRDFITS(datafile, 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF

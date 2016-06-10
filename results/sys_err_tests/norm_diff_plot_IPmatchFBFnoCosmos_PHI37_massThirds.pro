@@ -2,11 +2,11 @@
 
 PRO norm_diff_plot_IPmatchFBFnoCosmos_PHI37_massThirds, type, outputFormat
 	string_dR = 'dR1Mpc'
-	datapath = '~/results/match_IP_sample_rigorous/noCosmos/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/noCosmos/massThirds/'
 
 ;	IF (dR EQ 250.) THEN BEGIN
 ;		string_dR = 'dR250kpc'
-;		datapath = '~/results/match_IP_sample_rigorous/dR_250kpc/'
+;		datapath = '~/conformity/results/match_IP_sample_rigorous/dR_250kpc/'
 ;	ENDIF
 
 	!P.CHARSIZE=1.1

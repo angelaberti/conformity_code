@@ -5,8 +5,8 @@ PRO latefrac_matchedIP_massBins_samePlot, outputFormat;, zmin, zmax;, dz_coeff, 
 	zmin = 0.2
 	zmax = 1.0
 
-        dataIPallm  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
-	dataAllallm = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallm  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
+	dataAllallm = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 1.
@@ -107,7 +107,7 @@ PRO latefrac_matchedIP_massBins_samePlot, outputFormat;, zmin, zmax;, dz_coeff, 
 			outputStruct[j] = newRow
 		ENDFOR
 
-		MWRFITS, outputStruct, '~/results/match_IP_sample/massBins/latefrac_' + msuffix + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits', /create
+		MWRFITS, outputStruct, '~/conformity/results/match_IP_sample/massBins/latefrac_' + msuffix + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits', /create
 	ENDFOR
 
 	LEGEND, legend, LINESTYLE=[0,0,0], COLORS=cgColor(colors), /BOTTOM, /RIGHT, BOX=0

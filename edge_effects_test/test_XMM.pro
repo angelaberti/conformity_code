@@ -1,6 +1,6 @@
 PRO test_XMM, outputFormat
 
-	data = mrdfits('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits',1)
+	data = mrdfits('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits',1)
 
 	dataSXDS = data[WHERE( (data.field EQ 'xmm       ') AND (data.targ_weight GE 1.) )]
 	PRINT, n_elements(dataSXDS)

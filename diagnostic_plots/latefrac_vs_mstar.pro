@@ -22,9 +22,9 @@ PRO latefrac_vs_mstar, outputFormat
 	ymin = 0.2
 	ymax = 1.05
 	
-	dataAll = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
-	dataAllcomp = mrdfits('~/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits', 1)
-	dataIP	= mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
+	dataAll = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	dataAllcomp = mrdfits('~/conformity/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits', 1)
+	dataIP	= mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
 	dataIP = dataIP[WHERE(dataIP.IP EQ 1)]
 
 	mRange = MAX(dataAll.mstar)-MIN(dataAll.mstar)

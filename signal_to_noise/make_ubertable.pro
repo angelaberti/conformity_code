@@ -5,7 +5,7 @@ PRO make_ubertable
 
 	int = [ [0,0], [1,3], [4,5] ]
 
-	datapath = '~/results/match_IP_sample_rigorous/jackknife_error/halo12/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/halo12/'
 
   datafiles = [ $
 	'normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE_halo12.fits', $
@@ -62,7 +62,7 @@ PRINTF, unit, '}'
 
 PRINTF, unit, '\startdata'
 
-	IPdata = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPdata = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 
 	data = MRDFITS(datapath + datafiles[0], 1)
 	printLine, unit, data, int, IPdata, 0, '', 0

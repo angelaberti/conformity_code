@@ -4,12 +4,12 @@ PRO matchedSampleHist_allFields, outputFormat
 	targPhi = -3.7
 	stringPHI = strtrim(string(-1.*targPhi, format='(f20.1)'), 2)
 
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
         data = dataAll[where((dataAll.IP eq 1) AND (dataAll.targ_weight GE 1))]
 	dataSF = data[where(data.SFQ EQ 1)]
 	dataQ  = data[where(data.SFQ EQ 0)]
 
-	IPselect = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPselect = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 	SFselect = IPselect[where((IPselect.SFQ EQ 1) AND (IPselect.targ_weight GE 1) AND (IPselect.mstar GE 9.1))]
 	Qselect  = IPselect[where((IPselect.SFQ EQ 0) AND (IPselect.targ_weight GE 1) AND (IPselect.mstar GE 9.1))]
 

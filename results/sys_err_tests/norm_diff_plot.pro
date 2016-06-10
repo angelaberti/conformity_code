@@ -30,14 +30,14 @@ PRO norm_diff_plot, outputFormat
 	targ_weight_paths = []
 	median_paths 	  = []
 	FOREACH dm,['0.5','0.8','1.0'] DO BEGIN
-		var_mass_paths    = [var_mass_paths, '~/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0.fits']
-		targ_weight_paths = [targ_weight_paths, '~/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0.fits']
-		median_paths 	  = [median_paths, '~/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_median_zerodSFQ_IP_dz2.0.fits']
+		var_mass_paths    = [var_mass_paths, '~/conformity/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0.fits']
+		targ_weight_paths = [targ_weight_paths, '~/conformity/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0.fits']
+		median_paths 	  = [median_paths, '~/conformity/results/variable_mass+' + dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_median_zerodSFQ_IP_dz2.0.fits']
 	ENDFOREACH
 
-	dataPaths    = ['~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0_dm0.0.fits', var_mass_paths, $
-			'~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0_dm0.0.fits', targ_weight_paths, $
-			'~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_median_zerodSFQ_IP_dz2.0_dm0.0.fits', median_paths]
+	dataPaths    = ['~/conformity/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0_dm0.0.fits', var_mass_paths, $
+			'~/conformity/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0_dm0.0.fits', targ_weight_paths, $
+			'~/conformity/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_median_zerodSFQ_IP_dz2.0_dm0.0.fits', median_paths]
 
 	massDiffs = ['0.0', '0.5', '0.8', '1.0']
 	linestyles = [1,2,3,0]

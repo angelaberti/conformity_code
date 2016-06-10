@@ -7,7 +7,7 @@ PRO STATS
 
 ;	bin = 0.05
 
-	dataAll = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	dataAll = dataAll[where((dataAll.field EQ 'cosmos    ') AND (dataAll.targ_weight GE 1) AND (dataAll.zprimus GE 0.7))]
 	dataAllSF = dataAll[where(dataAll.SFQ EQ 1)]
 	dataAllQ  = dataAll[where(dataAll.SFQ EQ 0)]

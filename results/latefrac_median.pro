@@ -15,7 +15,7 @@ PRO latefrac_median, input_dm, outputFormat;, zmin, zmax;, dz_coeff, printEvery
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+        IPdataPath = '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 
 ;	PRINT, 'Input data: ', zerodInputFile
@@ -76,7 +76,7 @@ PRO latefrac_median, input_dm, outputFormat;, zmin, zmax;, dz_coeff, printEvery
                 outputStruct[i] = newRow
         ENDFOR
 
-        mwrfits, outputStruct, '~/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
+        mwrfits, outputStruct, '~/conformity/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
                                 + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_median_' + zerodInputFile, /create
 END
 
@@ -141,7 +141,7 @@ PRO get_mean_median, data, dz_coeff, IPSFstatus, IP_latefrac_mean_array, IP_late
 
 		IP_latefrac_array = [[IP_latefrac_array], [currentIP_latefrac_array]]
 
-		SAVE, IP_latefrac_array, FILE='~/results/variable_mass+' + string_dm + 'dex/latefrac_annulus_array_IP' + IPstatus + '.sav'
+		SAVE, IP_latefrac_array, FILE='~/conformity/results/variable_mass+' + string_dm + 'dex/latefrac_annulus_array_IP' + IPstatus + '.sav'
 
                 IF outputIndex mod printEvery EQ 0 THEN PRINT, outputIndex
 		outputIndex += 1

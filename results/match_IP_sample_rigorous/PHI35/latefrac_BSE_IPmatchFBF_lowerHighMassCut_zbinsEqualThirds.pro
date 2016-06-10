@@ -12,8 +12,8 @@ PRO latefrac_BSE_IPmatchFBF_lowerHighMassCut_zbinsEqualThirds, outputFormat;, zm
 	zmax = 1.0
 
 	; read in data files
-        dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/lowerHighMassCut/matchedIPsampleFBF_lowerHighMassCut.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/lowerHighMassCut/matchedIPsampleFBF_lowerHighMassCut.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 1.
@@ -118,7 +118,7 @@ PRO latefrac_BSE_IPmatchFBF_lowerHighMassCut_zbinsEqualThirds, outputFormat;, zm
                 outputStruct[j] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/lowerHighMassCut/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_lowerHighMassCut' + string_dR + '_BSE.fits', /create
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/lowerHighMassCut/latefrac_' + zsuffix + '_targ_weight_IPmatchFBF_lowerHighMassCut' + string_dR + '_BSE.fits', /create
   ENDFOR
 END
 

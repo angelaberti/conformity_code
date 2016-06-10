@@ -10,7 +10,7 @@ PRO latefrac_mass_thirds_hist, input_dm, third;, zmin, zmax;, dz_coeff
 	string_third = strtrim(strcompress(string(third, format='(i20)')),1)
 	string_dm = strtrim(strcompress(string(input_dm, format='(f20.1)')),1)
 
-	allDataPath	= '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+	allDataPath	= '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
 	zerodInputFile	= 'zerodSFQ_IP_dz2.0.fits'
 
 	zerodInput = mrdfits(allDataPath + zerodInputFile, 1)
@@ -30,7 +30,7 @@ PRO latefrac_mass_thirds_hist, input_dm, third;, zmin, zmax;, dz_coeff
 
 	Rproj_array = float(dRproj)*findgen(n_annuli+1)
 
-	data_isIP = mrdfits('~/results/mass_bins/IP_data/variable_mass+' + string_dm + 'dex/dataIP_T' + string_third + '.fits', 1)
+	data_isIP = mrdfits('~/conformity/results/mass_bins/IP_data/variable_mass+' + string_dm + 'dex/dataIP_T' + string_third + '.fits', 1)
 
 	n_tot_IPSF 	= 0.0*findgen(n_annuli)
 	n_late_IPSF 	= 0.0*findgen(n_annuli)
@@ -147,7 +147,7 @@ PRO latefrac_mass_thirds_hist, input_dm, third;, zmin, zmax;, dz_coeff
 ;	print, newRow
 ;	outputStruct[i] = newRow
 
-	mwrfits, outputStruct, '~/results/mass_bins/latefrac_data_hist/variable_mass+' + string_dm + 'dex/latefrac_' $
+	mwrfits, outputStruct, '~/conformity/results/mass_bins/latefrac_data_hist/variable_mass+' + string_dm + 'dex/latefrac_' $
 				+ strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
 				+ strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_dataIP_T' + string_third + '.fits', /create
 END

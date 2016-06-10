@@ -15,7 +15,7 @@ PRO sigmaRange, dataSet
 ; 3 equal IP z bins; results for all fields together to projected radius 10 Mpc; dR = 1 Mpc
   IF dataSet EQ 6 THEN BEGIN
 	intervals = int1Mpc_to10
-	datapath = '~/results/match_IP_sample_rigorous/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 ;		range = 'M' + strtrim(i,2) + 'halfDex'
@@ -30,8 +30,8 @@ PRO sigmaRange, dataSet
   IF dataSet EQ 5 THEN BEGIN
 	intervals = int1Mpc_to10
 ;	intervals = int250kpc_to10
-	datapath = '~/results/match_IP_sample_rigorous/fields/'
-;	datapath = '~/results/match_IP_sample_rigorous/fields/dR_250kpc/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/fields/'
+;	datapath = '~/conformity/results/match_IP_sample_rigorous/fields/dR_250kpc/'
     FOR f=0,4 DO BEGIN
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2) + '_' + strtrim(fields[f], 2)
@@ -44,7 +44,7 @@ PRO sigmaRange, dataSet
 
 ; 3 0.5 dex range mass bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 4 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'halfDex'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits']
@@ -54,7 +54,7 @@ PRO sigmaRange, dataSet
 
 ; 3 equal IP mass bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 3 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalIP'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits']
@@ -64,7 +64,7 @@ PRO sigmaRange, dataSet
 
 ; 3 equal mass range bins; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 2 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/massThirds/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/massThirds/'
 	FOR i=1,3 DO BEGIN
 		range = 'M' + strtrim(i,2) + 'equalRange'
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits']
@@ -74,7 +74,7 @@ PRO sigmaRange, dataSet
 
 ; all redshift range; results for all fields together to projected radius 5 Mpc; dR = 1 Mpc
   IF dataSet EQ 1 THEN BEGIN
-	datapath = '~/results/match_IP_sample_rigorous/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits']
@@ -85,7 +85,7 @@ PRO sigmaRange, dataSet
 ; all redshift range; results for all fields together to projected radius 5 Mpc; dR = 0.25 Mpc
   IF dataSet EQ 0 THEN BEGIN
 	intervals = int250kpc
-	datapath = '~/results/match_IP_sample_rigorous/dR_250kpc/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/dR_250kpc/'
 	FOR i=1,3 DO BEGIN
 		range = 'T' + strtrim(i,2)
 		datafiles = [datafiles, 'latefrac_' + range + '_targ_weight_IPmatchFBF_PHI3.7_dR250kpc_BSE.fits']

@@ -5,8 +5,8 @@ PRO projection_test05, outputFormat
 	zmax = 1.
 
 	; read in data files
-	dataIP  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	data	= MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	data	= MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	ERASE
 	!p.multi=[6,3,2]

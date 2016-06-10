@@ -15,5 +15,5 @@
 	.compile grid_array.pro
 	.compile grid_array_deluxe.pro
 	.compile grid_array_deluxe_unequal.pro
-	zerodSFQ_cart = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	zerodSFQ_cart = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = zerodSFQ_cart[uniq(zerodSFQ_cart.field, sort(zerodSFQ_cart.field))].field

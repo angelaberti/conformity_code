@@ -1,7 +1,7 @@
 ; define 'velocity' difference with dz=0.005(1+z)
 
 PRO iptest;, zerodInputFile, dm, dz_coeff, printEvery ; finds isolated primaries in a given field
-	zerodInputRaw = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	zerodInputRaw = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	dz_coeff = 2.
 	dm = 0.0
 	printEvery = 1000
@@ -20,8 +20,8 @@ PRO iptest;, zerodInputFile, dm, dz_coeff, printEvery ; finds isolated primaries
 	
 	outputIndex = 0L
 
-	IPcands    = mrdfits('~/results/conservative_mass_cutoff/allAboveMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
-	nonIPcands = mrdfits('~/results/conservative_mass_cutoff/allBelowMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+	IPcands    = mrdfits('~/conformity/results/conservative_mass_cutoff/allAboveMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+	nonIPcands = mrdfits('~/conformity/results/conservative_mass_cutoff/allBelowMassCompLim-' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
 
 	PRINT, 'IPcands:', n_elements(IPcands)
 	PRINT, 'nonIPcands:', n_elements(nonIPcands)
@@ -101,5 +101,5 @@ PRO iptest;, zerodInputFile, dm, dz_coeff, printEvery ; finds isolated primaries
 
 ;	IF outputIndex ne n_elements(zerodInput_zcut) THEN message, 'outputIndex mismatch'
 
-	MWRFITS, zerodOutput, '~/results/radius_test/IPdata_750kpc.fits', /CREATE
+	MWRFITS, zerodOutput, '~/conformity/results/radius_test/IPdata_750kpc.fits', /CREATE
 END

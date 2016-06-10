@@ -17,7 +17,7 @@ PRO norm_diff_plot_matchedIP_byField_highzThird_FBF, outputFormat
 	ymax = 0.35
 	yr = ymax - ymin
 
-	data = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	data = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = data[uniq(data.field, sort(data.field))].field	
 
 	PLOT, findgen(10), findgen(10), xrange=[xmin,xmax], yrange=[ymin,ymax], xtitle='Projected Radius (Mpc)', ytitle=textoidl('Normalized % Difference'), $
@@ -33,8 +33,8 @@ PRO norm_diff_plot_matchedIP_byField_highzThird_FBF, outputFormat
 		field = fields[i]
 		stringField = strtrim(strcompress(field),2)
 
-;		dataIP = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_M13highMassCut.fits', 1)
-		dataIP = MRDFITS('~/results/match_IP_sample_rigorous/lowerHighMassCut/matchedIPsampleFBF_lowerHighMassCut.fits', 1)
+;		dataIP = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_M13highMassCut.fits', 1)
+		dataIP = MRDFITS('~/conformity/results/match_IP_sample_rigorous/lowerHighMassCut/matchedIPsampleFBF_lowerHighMassCut.fits', 1)
 
 		dataIPfield = dataIP[where((dataIP.field EQ field) AND (dataIP.targ_weight GE 1.))]
 ;		zmin = MIN(dataIPfield.zprimus)
@@ -47,8 +47,8 @@ PRO norm_diff_plot_matchedIP_byField_highzThird_FBF, outputFormat
 ;			decimal(median(dataIPfield[where(dataIPfield.SFQ EQ 0)].zprimus),2) + ' (Q)']
 
 		zrange = 'T3'
-;		data = MRDFITS('~/results/match_IP_sample_rigorous/fields/latefrac_' + zrange + '_' + stringField + '_targ_weight_IPmatchFBF_M13highMassCut_dR1Mpc_BSE.fits', 1)
-		data = MRDFITS('~/results/match_IP_sample_rigorous/fields/lowerHighMassCut/latefrac_' + zrange + '_' + stringField + '_targ_weight_IPmatchFBF_lowerHighMassCut_dR1Mpc_BSE.fits', 1)
+;		data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/fields/latefrac_' + zrange + '_' + stringField + '_targ_weight_IPmatchFBF_M13highMassCut_dR1Mpc_BSE.fits', 1)
+		data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/fields/lowerHighMassCut/latefrac_' + zrange + '_' + stringField + '_targ_weight_IPmatchFBF_lowerHighMassCut_dR1Mpc_BSE.fits', 1)
 
 		Rmin		= data.rmin
 		Rmax		= data.rmax

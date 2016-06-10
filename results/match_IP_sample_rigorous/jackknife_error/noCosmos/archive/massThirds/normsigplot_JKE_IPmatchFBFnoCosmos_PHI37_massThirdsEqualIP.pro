@@ -15,9 +15,9 @@ PRO normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_massThirdsEqualIP, outputFormat;, z
 	zmax = 1.0
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	plotMax 	= Rmax-1
@@ -80,7 +80,7 @@ PRO normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_massThirdsEqualIP, outputFormat;, z
 ;	dataAll = dataAllallz[where( (dataAllallz.mstar GE mass_low) AND (dataAllallz.mstar LE mass_high) )]
 	dataAll = dataAllallz
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massThirds/normsig_' + massSuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/massThirds/normsig_' + massSuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 
 	normsig		= data.normsig
 	normsig_errors	= data.normsig_errors

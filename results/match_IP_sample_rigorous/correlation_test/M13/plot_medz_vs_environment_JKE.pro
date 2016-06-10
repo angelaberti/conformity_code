@@ -9,7 +9,7 @@ PRO plot_medz_vs_environment_JKE, outputFormat;, ptsPerBin, dR
 	!P.CHARSIZE = 1.25
 	dz_coeff = 2.0
 
-	datapath = '~/results/match_IP_sample_rigorous/correlation_test/M13/neighborDataAll_'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/correlation_test/M13/neighborDataAll_'
 	massRanges = ['10.7_11.0', '10.4_10.7', '10.1_10.4']
 
   !P.FONT=0

@@ -2,7 +2,7 @@ FUNCTION getContours, data, xbinwidth, ybinwidth, xpts, ypts
 ;	xbinwidth = 0.05
 ;	ybinwidth = 0.2
 
-;	data = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+;	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 
 	xdata = data.zprimus
 	ydata = data.mstar

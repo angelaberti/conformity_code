@@ -16,8 +16,8 @@ PRO normsig_JKE_IPmatchFBF_PHI37_zbinsEqualThirds_varCylDepth, dz_coeff;, output
 	zmax = 1.0
 
 	; read in data files
-	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	allDataAllz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	allDataAllz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 1.
@@ -124,7 +124,7 @@ PRO normsig_JKE_IPmatchFBF_PHI37_zbinsEqualThirds_varCylDepth, dz_coeff;, output
 		outputStruct[j] = newRow
 	ENDFOR
 
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/cylinderDepthTest/normsig_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_dzCoeff' + string_dzCoeff + '.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/cylinderDepthTest/normsig_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE_dzCoeff' + string_dzCoeff + '.fits', /CREATE
   ENDFOR
 END
 

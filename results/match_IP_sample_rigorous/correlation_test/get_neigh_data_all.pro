@@ -4,12 +4,12 @@ PRO get_neigh_data_all, minIPmstar
 	targPhi = -3.7
 	stringPHI = strtrim(string(-1.*targPhi, format='(f20.1)'), 2)
 
-;	dataAll = MRDFITS('~/results/default_parameters/allAboveMassCompLim-0.5.fits',1)
-	dataAll = MRDFITS('~/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits',1)
+;	dataAll = MRDFITS('~/conformity/results/default_parameters/allAboveMassCompLim-0.5.fits',1)
+	dataAll = MRDFITS('~/conformity/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits',1)
 	dataAll = dataAll[WHERE(dataAll.targ_weight GE 1.)]
 
-	dataIP 	= MRDFITS('~/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5_IP.fits',1)
-;	dataIP  = MRDFITS('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataIP 	= MRDFITS('~/conformity/results/match_IP_sample_rigorous/correlation_test/allAboveMassCompLim+0.5_IP.fits',1)
+;	dataIP  = MRDFITS('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 	dataIP  = dataIP[WHERE((dataIP.IP EQ 1) AND (dataIP.targ_weight GE 1.))]
 
 	fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field
@@ -94,5 +94,5 @@ PRO get_neigh_data_all, minIPmstar
   ENDFOR	
 	IPmassRange = decimal(minIPmstar,1) + '_' + decimal(maxIPmstar,1)
 ;	PRINT, IPmassRange
-	MWRFITS, neighData, '~/results/match_IP_sample_rigorous/correlation_test/M13/neighborDataAll_' + IPmassRange + '.fits', /CREATE
+	MWRFITS, neighData, '~/conformity/results/match_IP_sample_rigorous/correlation_test/M13/neighborDataAll_' + IPmassRange + '.fits', /CREATE
 END

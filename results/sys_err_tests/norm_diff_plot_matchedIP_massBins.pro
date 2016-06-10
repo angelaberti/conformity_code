@@ -27,8 +27,8 @@ PRO norm_diff_plot_matchedIP_massBins, outputFormat
 
 	massArray = [9.14254, 10.6708, 10.9550, 11.3974]
 
-        dataIPallm  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
-        dataAllallm = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallm  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
+        dataAllallm = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
         dataAllallm = dataAllallm[where(dataAllallm.targ_weight GE 1.)]
         dataIPallm  = dataIPallm[where(dataIPallm.targ_weight GE 1.)]
@@ -48,7 +48,7 @@ PRO norm_diff_plot_matchedIP_massBins, outputFormat
 ;		legend = [legend, 'M* = [' + decimal(massArray[i],2) + ', ' + decimal(massArray[i+1],2) + ']']
 
 		mrange = 'M' + strtrim(i+1,1)
-		data = MRDFITS('~/results/match_IP_sample/massBins/latefrac_' + mrange + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits', 1)
+		data = MRDFITS('~/conformity/results/match_IP_sample/massBins/latefrac_' + mrange + '_targ_weight_matchedIPsample_dR1Mpc_BSE.fits', 1)
 
 		Rmin		= data.rmin
 		Rmax		= data.rmax

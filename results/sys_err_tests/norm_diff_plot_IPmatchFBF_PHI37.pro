@@ -32,7 +32,7 @@ PRO norm_diff_plot_IPmatchFBF_PHI37, outputFormat
 		zrange = 'T' + strtrim(string(i+1, format='(i20)'),2)
 ;		IF i EQ 0 THEN zrange = '0.2_1.0' $
 ;		ELSE zrange = strtrim(string(0.2 + 0.2*(i-1), format='(f20.1)'),1) + '_' + strtrim(string(0.2 + 0.2*(i), format='(f20.1)'),1)
-		data = MRDFITS('~/results/match_IP_sample_rigorous/latefrac_' + zrange + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1)
+		data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/latefrac_' + zrange + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1)
 
 		Rmin		= data.rmin
 		Rmax		= data.rmax

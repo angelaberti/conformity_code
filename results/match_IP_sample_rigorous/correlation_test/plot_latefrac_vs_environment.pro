@@ -10,7 +10,7 @@ PRO plot_latefrac_vs_environment, dN, outputFormat;, ptsPerBin, dR
 ;	dR = 0.1 ; Mpc
 	dz_coeff = 2.0
 
-	neighData = MRDFITS('~/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_10.0_10.5.fits', 1)
+	neighData = MRDFITS('~/conformity/results/match_IP_sample_rigorous/correlation_test/neighborDataAll_10.0_10.5.fits', 1)
 
 ;	PRINT, MINMAX(neighData.n_neighbors)
 	Nmin = 0.

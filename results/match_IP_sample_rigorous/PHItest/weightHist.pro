@@ -1,5 +1,5 @@
 PRO weightHist, outputFormat
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
         fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field
 
 ;  FOR f=0,n_elements(fields)-1 DO BEGIN
@@ -31,7 +31,7 @@ PRO weightHist, outputFormat
   FOR p=0,n_elements(PHIarray)-1 DO BEGIN 
 	stringPHI = strtrim(string(-1.*PHIarray[p], format='(f20.1)'), 2)
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/PHItest/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/PHItest/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
 
 	SFIP = data[where(data.SFQ EQ 1)]
 	objnamesUniq = SFIP[uniq(SFIP.objname, sort(SFIP.objname))].objname

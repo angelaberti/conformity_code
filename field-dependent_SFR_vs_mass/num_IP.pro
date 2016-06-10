@@ -1,6 +1,6 @@
 PRO num_IP
 
-	data = mrdfits('~/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits',1)
+	data = mrdfits('~/conformity/results/variable_mass+1.0dex/IP_data/zerodSFQ_IP_dz2.0.fits',1)
 	fields = data[uniq(data.field, sort(data.field))].field
 	dataFD = mrdfits('~/field-dependent_SFR_vs_mass/zerodSFQ_IP_dz2.0_1.0dex.fits',1)
  

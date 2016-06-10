@@ -39,9 +39,9 @@ PRO normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_allz, outputFormat;, zmin, zmax;, d
 	zlabel  = 'z = [' + decimal(z_low,2) + ', ' + decimal(z_high,2) + ']'
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
         IF dRproj EQ 0.25 THEN string_dR = '_dR250kpc'
         IF dRproj EQ 0.50 THEN string_dR = '_dR500kpc'
@@ -79,7 +79,7 @@ PRO normsigplot_JKE_IPmatchFBFnoCosmos_PHI37_allz, outputFormat;, zmin, zmax;, d
 	PLOT, [xmin,xmax], [0,0], xrange=[xmin,xmax], yrange=[ymin,ymax], LINESTYLE=1, THICK=2, xtitle='Projected Radius (Mpc)', ytitle='Normalized Conformity Signal' 
 ;	  title = 'Field-by-Field Matched SF & Q IP Samples ' + textoidl('(\Deltaz=2.0)')
 
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/noCosmos/normsig_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	makePlots, data, cgcolor(REGcolor), 0.10
 
 ;  IF (COSMOScomp EQ 1) THEN LEGEND, ['Late-type IP', 'Early-type IP', 'COSMOS field excluded'], LINESTYLE=[0,2,0], colors=cgcolor([REGcolor,REGcolor,COScolor]), BOX=0, /TOP, /RIGHT

@@ -45,8 +45,8 @@ PRO normsigplot_BSE_IPmatchFBF_PHI37_allz_median_quartiles, outputFormat
 	zlabel  = 'z=[' + decimal(z_low,2) + '; ' + decimal(z_high,2) + ']'
 
 	; read in data files
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-;	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+;	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	; eliminate data with targ_weight < 1
 ;	dataAll = dataAllallz[where(dataAllallz.targ_weight GE 1.)]

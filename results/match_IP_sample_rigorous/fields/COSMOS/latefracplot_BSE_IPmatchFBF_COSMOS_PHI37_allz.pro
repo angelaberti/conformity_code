@@ -41,9 +41,9 @@ PRO latefracplot_BSE_IPmatchFBF_COSMOS_PHI37_allz, COSMOScomp, outputFormat;, zm
 	zlabel  = 'z = [' + decimal(z_low,2) + ', ' + decimal(z_high,2) + ']'
 
 	; read in data files
-;	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
         IF dRproj EQ 0.25 THEN string_dR = '_dR250kpc'
         IF dRproj EQ 0.50 THEN string_dR = '_dR500kpc'
@@ -85,10 +85,10 @@ PRO latefracplot_BSE_IPmatchFBF_COSMOS_PHI37_allz, COSMOScomp, outputFormat;, zm
 ;	  title = 'Field-by-Field Matched SF & Q IP Samples ' + textoidl('(\Deltaz=2.0)')
 
 	;latefrac_allz_cosmos_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits
-	data = MRDFITS('~/results/match_IP_sample_rigorous/fields/latefrac_' + zsuffix + '_cosmos_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/fields/latefrac_' + zsuffix + '_cosmos_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
 	makePlots, data, cgcolor(REGcolor), 0.10
   IF (COSMOScomp EQ 1) THEN BEGIN
-	data = MRDFITS('~/results/match_IP_sample_rigorous/noCosmos/latefrac_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/noCosmos/latefrac_' + zsuffix + '_targ_weight_IPmatchFBFnoCosmos_PHI' + stringPHI + string_dR + '_BSE.fits', 1)
 	makePlots, data, cgColor(COScolor), 0.05
   ENDIF
 

@@ -6,7 +6,7 @@ PRO sigmaRange_BSE_singleField
 	intervals = int1Mpc
 
 	allResults = []
-	datapath = '~/results/match_IP_sample_rigorous/fields/'
+	datapath = '~/conformity/results/match_IP_sample_rigorous/fields/'
 
 	fields = ['cdfs', 'cfhtls_xmm', 'cosmos', 'es1', 'xmm']
 

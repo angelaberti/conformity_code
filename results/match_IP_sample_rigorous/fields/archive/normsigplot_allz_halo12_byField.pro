@@ -25,8 +25,8 @@ PRO normsigplot_allz_halo12_byField, outputFormat
         IF dRproj EQ 1.00 THEN string_dR = '_dR1Mpc'
 
 ; Matched M* and Redshift
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 ; eliminate data with targ_weight < 1
         dataAllallz = dataAllallz[where(dataAllallz.targ_weight GE 1.)]
@@ -90,7 +90,7 @@ PRO normsigplot_allz_halo12_byField, outputFormat
 	IF (fields[f] EQ 'es1       ') THEN (stringField = 'ES1')
 	IF (fields[f] EQ 'xmm       ') THEN (stringField = 'XMM')
 
-	datafile = '~/results/match_IP_sample_rigorous/fields/latefrac_allz_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12_' + stringField + '.fits'
+	datafile = '~/conformity/results/match_IP_sample_rigorous/fields/latefrac_allz_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_BSE_halo12_' + stringField + '.fits'
 	data = MRDFITS(datafile, 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF

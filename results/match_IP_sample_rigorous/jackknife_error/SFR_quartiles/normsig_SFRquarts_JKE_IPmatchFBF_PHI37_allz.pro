@@ -7,11 +7,11 @@ PRO normsig_SFRquarts_JKE_IPmatchFBF_PHI37_allz, outputFormat
 	zmax = 1.0
 
 ; IP samples are highest and lowest SFR/M* quartiles, with matched redshift and z distributions
-;	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-;	IPdataAllz  = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF.fits', 1)
-	IPdata_low  = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF_PHI3.7_lowQuart.fits', 1)
-	IPdata_high = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF_PHI3.7_highQuart.fits', 1)
-	allDataAllz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+;	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+;	IPdataAllz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF.fits', 1)
+	IPdata_low  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF_PHI3.7_lowQuart.fits', 1)
+	IPdata_high = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/matchedIPsampleFBF_PHI3.7_highQuart.fits', 1)
+	allDataAllz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 1.
@@ -133,8 +133,8 @@ PRO normsig_SFRquarts_JKE_IPmatchFBF_PHI37_allz, outputFormat
 		outputStruct[j] = newRow
 	ENDFOR
 
-;	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/normsig_matchedIPsampleFBF_uniqIPlowuarts.fits', /CREATE
-	MWRFITS, outputStruct, '~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/normsig_matchedIPsampleFBF_highLowQuarts.fits', /CREATE
+;	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/normsig_matchedIPsampleFBF_uniqIPlowuarts.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/normsig_matchedIPsampleFBF_highLowQuarts.fits', /CREATE
 END
 
 

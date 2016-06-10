@@ -15,8 +15,8 @@ PRO latefrac
 	zmax = 1.0
 
 	; read in data files
-	dataIPallz  = MRDFITS('~/results/radius_test/matchedIPsample_250kpc.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/radius_test/matchedIPsample_250kpc.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 0.25
@@ -115,7 +115,7 @@ PRO latefrac
                 outputStruct[j] = newRow
         ENDFOR
 
-	MWRFITS, outputStruct, '~/results/radius_test/latefrac_250kpc.fits', /CREATE
+	MWRFITS, outputStruct, '~/conformity/results/radius_test/latefrac_250kpc.fits', /CREATE
 ;  ENDFOR
 END
 

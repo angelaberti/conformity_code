@@ -39,7 +39,7 @@ PRO latefracplot_BSE_IPmatchFBF_PHI37_allz_SFRquartiles, outputFormat;, zmin, zm
 
   colors = ['red','orange','cyan','blue']
   FOR i=0,3 DO BEGIN
-	data = MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/latefrac_BSE_quart'+STRTRIM(i+1,2)+'.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/SFR_quartiles/latefrac_BSE_quart'+STRTRIM(i+1,2)+'.fits', 1)
 
 	n_tot_IP  = data.n_tot_IP
 	n_late_IP = data.n_late_IP

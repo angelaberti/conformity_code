@@ -24,8 +24,8 @@ PRO iptest_conservative_plus03dex ;, zerodInputFile, dm, dz_coeff, printEvery ; 
 ; make initial mass cut based on field, z, and star-forming status to get sample to test for IP status
 	IPcands    = []
 	nonIPcands = []
-;	IPcands    = mrdfits('~/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
-;	nonIPcands = mrdfits('~/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+;	IPcands    = mrdfits('~/conformity/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
+;	nonIPcands = mrdfits('~/conformity/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', 1)
 
 	FOR i=0,n_elements(zerodInput)-1 DO BEGIN
 		massLimit = mlimit(massStruct, fields, zerodInput[i]) + 0.3 ; dm is tolerance in dex beyond Moustakas limit
@@ -41,8 +41,8 @@ PRO iptest_conservative_plus03dex ;, zerodInputFile, dm, dz_coeff, printEvery ; 
 		ENDIF	
 	END
 
-	mwrfits, IPcands, '~/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
-	mwrfits, nonIPcands, '~/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
+	mwrfits, IPcands, '~/conformity/results/allAboveMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
+	mwrfits, nonIPcands, '~/conformity/results/allBelowMassCompLim+' + strtrim(strcompress(string(dm, format='(f20.1)')), 1) + '.fits', /create
 
 	PRINT, "IPcands:", n_elements(IPcands)
 	PRINT, "nonIPcands:", n_elements(nonIPcands)

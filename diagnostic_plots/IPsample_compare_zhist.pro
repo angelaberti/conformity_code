@@ -13,7 +13,7 @@ PRO IPsample_compare_zhist, outputFormat
 
 	!p.charsize = 1.3
 
-	datapath = '~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits'
+	datapath = '~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits'
 
         data = mrdfits(datapath, 1)
 
@@ -42,7 +42,7 @@ PRO IPsample_compare_zhist, outputFormat
 	colors = ['Purple', 'Cyan', 'Green']
 	
   FOR i=0,2 DO BEGIN	
-	datapath = '~/results/variable_mass+' + string_dm[i] + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits'
+	datapath = '~/conformity/results/variable_mass+' + string_dm[i] + 'dex/IP_data/zerodSFQ_IP_dz2.0.fits'
 	data 	 = mrdfits(datapath, 1)
 
 	dataIP 	 = data[where(data.IP eq 1)]

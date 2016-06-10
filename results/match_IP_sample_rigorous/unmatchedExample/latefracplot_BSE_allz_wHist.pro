@@ -10,26 +10,26 @@ PRO latefracplot_BSE_allz_wHist, outputFormat
 
   IPdatafiles = [ $
 ; MATCHED Z AND MASS
-	'~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', $
 ; MATCHED MASS ONLY
-	'~/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', $
 ; MATCHED Z ONLY
-	'~/results/match_IP_sample_rigorous/unmatchedExample/matchRedshiftOnly/matchedIPsampleRedshiftOnlyFBF_PHI3.7.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchRedshiftOnly/matchedIPsampleRedshiftOnlyFBF_PHI3.7.fits', $
 ; NO MATCHING
-;	'~/results/match_IP_sample_rigorous/unmatchedExample/noMatching/unmatchedSampleFBF_PHI3.7.fits', $
-	'~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits' $
+;	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/noMatching/unmatchedSampleFBF_PHI3.7.fits', $
+	'~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits' $
   ]
 
   datafiles = [ $
 ; MATCHED Z AND MASS
-	'~/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', $
 ; MATCHED MASS ONLY
-	'~/results/match_IP_sample_rigorous/unmatchedExample/latefrac_matchMassOnly_allz_dR1Mpc_BSE.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/latefrac_matchMassOnly_allz_dR1Mpc_BSE.fits', $
 ; MATCHED Z ONLY
-	'~/results/match_IP_sample_rigorous/unmatchedExample/latefrac_matchRedshiftOnly_allz_dR1Mpc_BSE.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/latefrac_matchRedshiftOnly_allz_dR1Mpc_BSE.fits', $
 ; NO MATCHING
-;	'~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0_dm0.0.fits', $
-	'~/results/match_IP_sample_rigorous/unmatchedExample/latefrac_conservative_allz_dR1Mpc_BSE.fits' $
+;	'~/conformity/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_targ_weight_zerodSFQ_IP_dz2.0_dm0.0.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/latefrac_conservative_allz_dR1Mpc_BSE.fits' $
   ]
 
   titles = [$;'Default Parameters', $
@@ -102,7 +102,7 @@ PRO latefracplot_BSE_allz_wHist, outputFormat
   ENDFOR
 ;	PRINT, posArray
 
-	dataAll_allz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll_allz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
         dataAll_allz = dataAll_allz[where(dataAll_allz.targ_weight GE 1.)]
 
   FOR i=0,n_elements(IPdatafiles)-1 DO BEGIN

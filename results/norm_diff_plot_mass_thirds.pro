@@ -62,7 +62,7 @@ PRO norm_diff_plot_mass_thirds, outputFormat
 END
 
 FUNCTION get_norm_diff, third, string_dm
-	latefracdata 	= '~/results/mass_bins/latefrac_data_hist/variable_mass+' + string_dm + 'dex/latefrac_0.2_1.0_dataIP_T' + strtrim(strcompress(third),1) + '.fits'
+	latefracdata 	= '~/conformity/results/mass_bins/latefrac_data_hist/variable_mass+' + string_dm + 'dex/latefrac_0.2_1.0_dataIP_T' + strtrim(strcompress(third),1) + '.fits'
 	data		= mrdfits(latefracdata, 1)
 
 	fracIPSF = data.n_late_IPSF/data.n_tot_IPSF

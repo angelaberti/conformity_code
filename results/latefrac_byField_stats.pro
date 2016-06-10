@@ -29,7 +29,7 @@ PRO latefrac_byField_stats, outputFormat
 	dRproj		= 0.25
 	printEvery	= 100
 
-	IPdataPath 	= '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+	IPdataPath 	= '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
 	zerodInputFile 	= 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 	zerodInput 	= mrdfits(IPdataPath + zerodInputFile, 1)
 	fields 		= zerodInput[uniq(zerodInput.field, sort(zerodInput.field))].field

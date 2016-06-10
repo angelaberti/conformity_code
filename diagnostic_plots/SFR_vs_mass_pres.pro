@@ -13,7 +13,7 @@ PRO SFR_vs_mass_pres, outputFormat
 	USERSYM, A*COS(th), A*SIN(th), /FILL
 
 	SYM=8	
-		data=mrdfits('~/results/zerodSFQ_all_cart.fits',1)
+		data=mrdfits('~/conformity/results/zerodSFQ_all_cart.fits',1)
 		
 ;		!P.FONT = 0
 		!p.multi=[0,3,2]

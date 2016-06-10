@@ -1,7 +1,7 @@
 PRO field_stats
 
-	data	= MRDFITS('~/results/zerodSFQ_all_cart.fits',1)
-	dataIP	= MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits',1)
+	data	= MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits',1)
+	dataIP	= MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits',1)
 
 	fields = data[UNIQ(data.field, SORT(data.field))].field
 

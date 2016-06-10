@@ -17,7 +17,7 @@ PRO latefracplot_variable_targ_weight_PNZ, outputFormat;, zmin, zmax;, dz_coeff,
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/variable_mass+1.0dex/IP_data/'
+        IPdataPath = '~/conformity/results/variable_mass+1.0dex/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 
 	PRINT, 'Input data: ', zerodInputFile
@@ -45,7 +45,7 @@ PRO latefracplot_variable_targ_weight_PNZ, outputFormat;, zmin, zmax;, dz_coeff,
 
 ;	get_targ_weight, data, dz_coeff, 1, neigh_all_grand_total, neigh_late_grand_total, n_annuli, dRproj, printEvery
 
-	data = mrdfits('~/results/permute_neighbor_z/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_targ_weight_' + zerodInputFile, 1)
+	data = mrdfits('~/conformity/results/permute_neighbor_z/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_targ_weight_' + zerodInputFile, 1)
 
 	n_tot_IPSF  = data.n_tot_IPSF
 	n_late_IPSF = data.n_late_IPSF

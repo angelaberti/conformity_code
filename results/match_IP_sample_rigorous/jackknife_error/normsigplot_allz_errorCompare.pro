@@ -39,8 +39,8 @@ PRO normsigplot_allz_errorCompare, outputFormat
 	zlabel  = 'z = [' + decimal(z_low,2) + ', ' + decimal(z_high,2) + ']'
 
 	; read in data files
-	dataIPallz  = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI' + stringPHI + '.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
         IF dRproj EQ 0.25 THEN string_dR = '_dR250kpc'
         IF dRproj EQ 0.50 THEN string_dR = '_dR500kpc'
@@ -66,11 +66,11 @@ PRO normsigplot_allz_errorCompare, outputFormat
 ;	PLOT, [xmin,xmax], [0,0], xrange=[xmin,xmax], yrange=[ymin,ymax], LINESTYLE=1, xtitle='Projected Radius (Mpc)', ytitle='Signal (%)', THICK=2
 	PLOT, [xmin,xmax], [0,0], xrange=[xmin,xmax], yrange=[ymin,ymax], LINESTYLE=1, xtitle=textoidl('R_{proj} (Mpc)'), ytitle=textoidl('\xi_{norm}'), THICK=2
 
-	data	= MRDFITS('~/results/match_IP_sample_rigorous/jackknife_error/normsig_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
+	data	= MRDFITS('~/conformity/results/match_IP_sample_rigorous/jackknife_error/normsig_' + zsuffix + '_targ_weight_IPmatchFBF_PHI' + stringPHI + string_dR + '_JKE.fits', 1)
 	normsig		= data.normsig
 	normsig_errors  = data.normsig_errors ; jackknife errors
 
-	dataBSE = MRDFITS('~/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits',1)
+	dataBSE = MRDFITS('~/conformity/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits',1)
 	n_tot_IPSF 	= dataBSE.n_tot_IPSF
 	n_late_IPSF	= dataBSE.n_late_IPSF
 	errors_IPSF	= dataBSE.errors_IPSF

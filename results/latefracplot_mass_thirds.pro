@@ -80,8 +80,8 @@ PRO latefracplot_mass_thirds, dataSet, binning, input_xmax, outputFormat
 	PRINT, 'Data selected: ' + specs.paramType[dataSet]
 	PRINT, 'Binning: ' + binType
 
-	IPdataDir	= '~/results/' + specs.IPdataDir[dataSet] + '/IP_data/'
-	latefracdataDir = '~/results/' + specs.paramTypeDir[dataSet] + '/latefrac_data_hist/'
+	IPdataDir	= '~/conformity/results/' + specs.IPdataDir[dataSet] + '/IP_data/'
+	latefracdataDir = '~/conformity/results/' + specs.paramTypeDir[dataSet] + '/latefrac_data_hist/'
 	latefracSuffix 	= specs.latefracSuffix[dataSet]
 
 	IF (specs.figNameSuffix[dataSet] EQ 'mass_bins_0.8dex') THEN BEGIN

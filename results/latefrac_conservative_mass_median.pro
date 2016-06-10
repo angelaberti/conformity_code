@@ -13,7 +13,7 @@ PRO latefrac_conservative_mass_median, outputFormat;, zmin, zmax;, dz_coeff, pri
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/conservative_mass_cutoff/IP_data/'
+        IPdataPath = '~/conformity/results/conservative_mass_cutoff/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '_dm0.0.fits'
 
 ;	PRINT, 'Input data: ', zerodInputFile
@@ -74,7 +74,7 @@ PRO latefrac_conservative_mass_median, outputFormat;, zmin, zmax;, dz_coeff, pri
                 outputStruct[i] = newRow
         ENDFOR
 
-        mwrfits, outputStruct, '~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
+        mwrfits, outputStruct, '~/conformity/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
                                 + strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_median_' + zerodInputFile, /create
 END
 

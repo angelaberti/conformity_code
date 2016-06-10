@@ -21,9 +21,9 @@ PRO z_vs_latefrac, outputFormat
 	ymin = 0.0
 	ymax = 1.05
 	
-	dataAll = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
-	dataAllcomp = mrdfits('~/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits', 1)
-	dataIP	= mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
+	dataAll = mrdfits('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	dataAllcomp = mrdfits('~/conformity/results/conservative_mass_cutoff/allAboveMassCompLim-0.0.fits', 1)
+	dataIP	= mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', 1)
 	dataIP = dataIP[WHERE(dataIP.IP EQ 1)]
 
 	PLOT, findgen(10), findgen(10), xrange=[0.2,1.0], yrange=[ymin,ymax], /NODATA, xtitle='Redshift', ytitle='Late-type fraction';, title='Late-type fraction vs. redshift for entire sample'

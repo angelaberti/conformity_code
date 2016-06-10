@@ -6,7 +6,7 @@ PRO latefrac_variable_mass_hist, input_dm;, zmin, zmax;, dz_coeff
 	zmax = 1.0
 	string_dm = strtrim(strcompress(string(input_dm, format='(f20.1)')),1)
 
-	IPdataPath = '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+	IPdataPath = '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
 	zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 
 ;	PRINT, 'Input data: ', zerodInputFile
@@ -142,7 +142,7 @@ PRO latefrac_variable_mass_hist, input_dm;, zmin, zmax;, dz_coeff
 ;	print, newRow
 ;	outputStruct[i] = newRow
 
-	mwrfits, outputStruct, '~/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' $
+	mwrfits, outputStruct, '~/conformity/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' $
 				+ strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
 				+ strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_' + zerodInputFile, /create
 END

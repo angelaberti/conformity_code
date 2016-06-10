@@ -5,7 +5,7 @@ PRO matchedSamplePlot_allFields_noContours, outputFormat
 	stringPHI = strtrim(string(-1.*targPhi, format='(f20.1)'), 2)
 
 	seed = 1
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
         data = dataAll[where(dataAll.IP eq 1)]
 
         fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field
@@ -80,7 +80,7 @@ PRO matchedSamplePlot_allFields_noContours, outputFormat
 	LEGEND, ['SF IP','Q IP'], LINESTYLE=[0,2], COLOR=[cgColor('blue'),cgColor('red')], BOX=0, /BOTTOM, /RIGHT, THICK=5, NUMBER=2, PSPACING=3, CHARSIZE=1.25
 ;	LEGEND, ['SF IP','Q IP'], LINESTYLE=[0,2], COLOR=[cgColor('blue'),cgColor('red')], BOX=0, POS=[0.52,8.65], THICK=5, NUMBER=2, PSPACING=3
 
-	IPselect = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	IPselect = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 	massArray_IPselect = FLOOR(10.*MIN(IPselect.mstar))/10. + mass_binwidth*FINDGEN((CEIL(10.*MAX(IPselect.mstar))/10. - FLOOR(10.*MIN(IPselect.mstar))/10.)/mass_binwidth + 1)	
 	PRINT, 'IP selection mass array: ', massArray_IPselect
 
@@ -95,7 +95,7 @@ PRO matchedSamplePlot_allFields_noContours, outputFormat
 ;	OPLOT, dataQ.zprimus, dataQ.mstar, psym=psym, COLOR=Qcolor
 
 	; SCATTER PLOT OF ALL PRIMUS SOURCES WITH TARG_WEIGHT >= 1
-	allPRIMUS = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	allPRIMUS = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	allPRIMUS = allPRIMUS[WHERE(allPRIMUS.TARG_WEIGHT GE 1)]
 	allPRIMUS_SF = allPRIMUS[WHERE(allPRIMUS.SFQ EQ 1)]
 	allPRIMUS_Q  = allPRIMUS[WHERE(allPRIMUS.SFQ EQ 0)]

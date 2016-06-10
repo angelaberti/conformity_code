@@ -5,8 +5,8 @@ PRO latefrac_matchedIP_zbinsEqualThirds_dR500kpc_BSE, outputFormat;, zmin, zmax;
 	zmin = 0.2
 	zmax = 1.0
 
-        dataIPallz  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 15.
 	dRproj		= 0.5
@@ -104,7 +104,7 @@ PRO latefrac_matchedIP_zbinsEqualThirds_dR500kpc_BSE, outputFormat;, zmin, zmax;
 			outputStruct[j] = newRow
 		ENDFOR
 
-		MWRFITS, outputStruct, '~/results/match_IP_sample/dR_500kpc/latefrac_' + zsuffix + '_targ_weight_matchedIPsample_BSE.fits', /create
+		MWRFITS, outputStruct, '~/conformity/results/match_IP_sample/dR_500kpc/latefrac_' + zsuffix + '_targ_weight_matchedIPsample_BSE.fits', /create
 	ENDFOR
 END
 

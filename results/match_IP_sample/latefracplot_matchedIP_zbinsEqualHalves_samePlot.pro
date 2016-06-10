@@ -13,8 +13,8 @@ PRO latefracplot_matchedIP_zbinsEqualHalves_samePlot, outputFormat;, zmin, zmax;
 	zmin = 0.2
 	zmax = 1.0
 
-        dataIPallz  = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits', 1)
-	dataAllallz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+        dataIPallz  = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits', 1)
+	dataAllallz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 
 	Rmax 		= 5.
 	dRproj		= 0.25
@@ -60,7 +60,7 @@ PRO latefracplot_matchedIP_zbinsEqualHalves_samePlot, outputFormat;, zmin, zmax;
 		zsuffix = 'H' + strtrim(i+1,1)
 ;		zlabel  = strtrim(string(0.2+0.2*i,format='(f20.1)'),1) + ' < z < ' + strtrim(string(0.2+0.2*(i+1),format='(f20.1)'),1)
 
-		lfdata = MRDFITS('~/results/match_IP_sample/latefrac_' + zsuffix + '_targ_weight_matchedIPsample_BSE.fits',1)
+		lfdata = MRDFITS('~/conformity/results/match_IP_sample/latefrac_' + zsuffix + '_targ_weight_matchedIPsample_BSE.fits',1)
 		
 		n_tot_IPSF  = lfdata.n_tot_IPSF
 		n_late_IPSF = lfdata.n_late_IPSF

@@ -12,7 +12,7 @@ PRO matchSamples, outputFormat
 	        SET_PLOT, 'X'
 	ENDELSE
 
-	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 	data = dataAll[where(dataAll.IP eq 1)]
 		
 	!P.MULTI = 0

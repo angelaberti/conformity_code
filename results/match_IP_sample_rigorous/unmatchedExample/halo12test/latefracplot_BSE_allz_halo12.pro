@@ -9,11 +9,11 @@ PRO latefracplot_BSE_allz_halo12, outputFormat;, zmin, zmax;, dz_coeff, printEve
 	Qcolor  = cgcolor('red')
 
   IPdatafiles = [ $
-	'~/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', $
-	'~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', $
-;	'~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
-	'~/results/match_IP_sample_rigorous/unmatchedExample/noMatching/unmatchedSampleFBF_PHI3.7.fits', $
-	'~/results/match_IP_sample_rigorous/unmatchedExample/matchRedshiftOnly/matchedIPsampleRedshiftOnlyFBF_PHI3.7.fits'] ; matched z only
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchMassOnly/matchedIPsampleMassOnlyFBF_PHI3.7.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', $
+;	'~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/noMatching/unmatchedSampleFBF_PHI3.7.fits', $
+	'~/conformity/results/match_IP_sample_rigorous/unmatchedExample/matchRedshiftOnly/matchedIPsampleRedshiftOnlyFBF_PHI3.7.fits'] ; matched z only
 
   titles = [$;'Default Parameters', $
 	'(c) Matched ' + textoidl('M_{\ast}') + ' Only', $
@@ -70,7 +70,7 @@ PRO latefracplot_BSE_allz_halo12, outputFormat;, zmin, zmax;, dz_coeff, printEve
 		THICK=1
 	ENDELSE
 
-	dataAll_allz = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	dataAll_allz = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 ; eliminate data with targ_weight < 1
         dataAll_allz = dataAll_allz[where(dataAll_allz.targ_weight GE 1.)]
 
@@ -113,8 +113,8 @@ PRO latefracplot_BSE_allz_halo12, outputFormat;, zmin, zmax;, dz_coeff, printEve
 	SFcolor = cgcolor('blue')
 	Qcolor  = cgcolor('red')
 
-;	IF (i EQ 5) THEN dataIP_allz = MRDFITS('~/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1) ELSE $
-;	IF (i EQ 5) THEN dataIP_allz = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1) ELSE $
+;	IF (i EQ 5) THEN dataIP_allz = MRDFITS('~/conformity/results/match_IP_sample_rigorous/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1) ELSE $
+;	IF (i EQ 5) THEN dataIP_allz = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1) ELSE $
 	  dataIP_allz  = MRDFITS(IPdatafiles[i], 1)
 
 	; eliminate data with targ_weight < 1
@@ -125,8 +125,8 @@ PRO latefracplot_BSE_allz_halo12, outputFormat;, zmin, zmax;, dz_coeff, printEve
 
 	zlabel = 'z=[' + decimal(z_low,2) + ', ' + decimal(z_high,2) + ']'
 
-	IF (i EQ 1) THEN datafile = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE_halo12.fits' ELSE $
-	  datafile = '~/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_' + tags[i] + '_allz_dR1Mpc_BSE.fits'
+	IF (i EQ 1) THEN datafile = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE_halo12.fits' ELSE $
+	  datafile = '~/conformity/results/match_IP_sample_rigorous/unmatchedExample/halo12test/latefrac_' + tags[i] + '_allz_dR1Mpc_BSE.fits'
 	data = MRDFITS(datafile, 1)
 	PRINT, datafile
 

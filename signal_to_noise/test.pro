@@ -1,7 +1,7 @@
 PRO test, lower_index, upper_index
 ;	lower_index=1
 ;	upper_index=3
-	datafile = '~/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits'
+	datafile = '~/conformity/results/match_IP_sample_rigorous/jackknife_error/normsig_allz_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_JKE.fits'
 	data = mrdfits(datafile, 1)
 
 	n_late_IPSF = data.n_late_IPSF

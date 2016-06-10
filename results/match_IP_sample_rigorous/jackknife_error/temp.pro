@@ -1,5 +1,5 @@
 PRO temp
-	data = MRDFITS('~/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/matchedIPsampleFBF_PHI3.7.fits', 1)
 	data_zlow	= data[WHERE(data.zprimus LE median(data.zprimus))]
 	data_zhigh	= data[WHERE(data.zprimus GT median(data.zprimus))]
 	data_mlow	= data[WHERE(data.mstar LE median(data.mstar))]

@@ -24,8 +24,8 @@ PRO IPhist_latefrac_vs_z, outputFormat
 
 	zbins = zmin+bin*FINDGEN(CEIL((zmax-zmin)/bin))
 
-	dataAll = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
-	dataIP  = MRDFITS('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
+	dataIP  = MRDFITS('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
 
 	dataAll   = dataAll[WHERE(dataAll.targ_weight GE 1.)]
 	dataAllSF = dataAll[WHERE(dataAll.SFQ EQ 1)]

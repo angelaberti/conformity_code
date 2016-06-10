@@ -16,7 +16,7 @@ PRO norm_diff_plot_matchedIP_byField, outputFormat
 	ymax = 0.35
 	yr = ymax - ymin
 
-	data = MRDFITS('~/results/zerodSFQ_all_cart.fits', 1)
+	data = MRDFITS('~/conformity/results/zerodSFQ_all_cart.fits', 1)
 	fields = data[uniq(data.field, sort(data.field))].field	
 
 	PLOT, findgen(10), findgen(10), xrange=[xmin,xmax], yrange=[ymin,ymax], xtitle='Projected Radius (Mpc)', ytitle=textoidl('Normalized % Difference'), $
@@ -31,7 +31,7 @@ PRO norm_diff_plot_matchedIP_byField, outputFormat
 		field = fields[i]
 		stringField = strtrim(strcompress(field),2)
 
-		dataIP = MRDFITS('~/results/match_IP_sample/matchedIPsample.fits',1)
+		dataIP = MRDFITS('~/conformity/results/match_IP_sample/matchedIPsample.fits',1)
 		dataIPfield = dataIP[where((dataIP.field EQ field) AND (dataIP.targ_weight GE 1.))]
 
 		legend = [legend, stringField + '; Med M*, z: ' + $
@@ -41,7 +41,7 @@ PRO norm_diff_plot_matchedIP_byField, outputFormat
 			decimal(median(dataIPfield[where(dataIPfield.SFQ EQ 0)].zprimus),2) + ' (Q)']
 
 		zrange = '0.20_1.00'
-		data = MRDFITS('~/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + stringField + '_dR1Mpc_BSE.fits', 1)
+		data = MRDFITS('~/conformity/results/match_IP_sample/byField/latefrac_' + zrange + '_targ_weight_matchedIPsample_' + stringField + '_dR1Mpc_BSE.fits', 1)
 
 		Rmin		= data.rmin
 		Rmax		= data.rmax

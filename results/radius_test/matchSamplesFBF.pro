@@ -8,8 +8,8 @@ PRO matchSamplesFBF
 	stringPHI = strtrim(string(-1.*targPhi, format='(f20.1)'), 2)
 
 	seed = 1
-;	dataAll = mrdfits('~/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
-	dataAll = MRDFITS('~/results/radius_test/IPdata_250kpc.fits',1)
+;	dataAll = mrdfits('~/conformity/results/conservative_mass_cutoff/IP_data/zerodSFQ_IP_dz2.0_dm0.0.fits',1)
+	dataAll = MRDFITS('~/conformity/results/radius_test/IPdata_250kpc.fits',1)
         dataIPallFields = dataAll[where(dataAll.IP eq 1)]
 
         fields = dataAll[uniq(dataAll.field, sort(dataAll.field))].field
@@ -189,7 +189,7 @@ PRO matchSamplesFBF
 
 	allIP = [QsampleAllFields, SFselectAllFields]
 
-	MWRFITS, allIP, '~/results/radius_test/matchedIPsample_250kpc.fits', /CREATE
+	MWRFITS, allIP, '~/conformity/results/radius_test/matchedIPsample_250kpc.fits', /CREATE
 
 	FOR f=0,n_elements(fields)-1 DO BEGIN
 ;	FOR f=3,3 DO BEGIN

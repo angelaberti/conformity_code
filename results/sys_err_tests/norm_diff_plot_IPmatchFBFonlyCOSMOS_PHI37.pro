@@ -24,7 +24,7 @@ PRO norm_diff_plot_IPmatchFBFonlyCOSMOS_PHI37, outputFormat
 	colors = [cgColor('Magenta'), cgColor('Purple'), cgColor('Blue')]
 
 	zrange = 'allz_cosmos'
-	data = MRDFITS('~/results/match_IP_sample_rigorous/fields/latefrac_' + zrange + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1)
+	data = MRDFITS('~/conformity/results/match_IP_sample_rigorous/fields/latefrac_' + zrange + '_targ_weight_IPmatchFBF_PHI3.7_dR1Mpc_BSE.fits', 1)
 
 	Rmin		= data.rmin
 	Rmax		= data.rmax

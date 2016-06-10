@@ -16,7 +16,7 @@ PRO latefrac_targ_weight, input_dm, outputFormat;, zmin, zmax;, dz_coeff, printE
 	zmin = 0.2
 	zmax = 1.0
 
-        IPdataPath = '~/results/variable_mass+' + string_dm + 'dex/IP_data/'
+        IPdataPath = '~/conformity/results/variable_mass+' + string_dm + 'dex/IP_data/'
         zerodInputFile = 'zerodSFQ_IP_dz' + strtrim(strcompress(string(dz_coeff, format='(f20.1)')),1) + '.fits'
 
 ;	PRINT, 'Input data: ', zerodInputFile
@@ -78,7 +78,7 @@ PRO latefrac_targ_weight, input_dm, outputFormat;, zmin, zmax;, dz_coeff, printE
                 outputStruct[i] = newRow
         ENDFOR
 
-        mwrfits, outputStruct, '~/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
+        mwrfits, outputStruct, '~/conformity/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_' + strtrim(strcompress(string(zmin, format='(f20.1)')), 1) + '_' $
 				+ strtrim(strcompress(string(zmax, format='(f20.1)')) ,1) + '_targ_weight_' + zerodInputFile, /create
 END
 

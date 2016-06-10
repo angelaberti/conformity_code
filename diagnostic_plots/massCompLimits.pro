@@ -6,7 +6,7 @@ PRO massCompLimits, outputFormat
 	        SET_PLOT, 'X'
 	ENDELSE
 
-		data=mrdfits('~/results/zerodSFQ_all_cart.fits',1)
+		data=mrdfits('~/conformity/results/zerodSFQ_all_cart.fits',1)
 		
 		!p.multi=0
 
