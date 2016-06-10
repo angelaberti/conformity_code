@@ -1,0 +1,9 @@
+	.compile '*.pro'
+;	files = findfile('*.pro')
+;	PRINT, files
+
+;	FOREACH item, files DO BEGIN
+;		.compile item
+;		PRINT, STRMID(item, 0, strlen(item)-4)
+;		STRMID(item, 0, strlen(item)-4)
+;	ENDFOREACH

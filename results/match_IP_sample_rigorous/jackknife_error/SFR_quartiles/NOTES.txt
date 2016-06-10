@@ -1,0 +1,13 @@
+take all IP candidates above 
+
+matchedIPsampleFBF_PHI3.7.fits
+- all matched IPs
+
+matchedIPsampleFBF_PHI3.7_highLowQuarts.fits
+- lowest and highest quartiles (SFR/M*) taken first, THEN z & mstar distributions matched
+- large upweighting of highest quartile (max weight 17 among all fields)
+	- degree of upweighting can be controlled by decreasing z and mstar bin size
+
+matchedIPsampleFBF.fits
+- z & mstar matching done first, then lowest & highest SFR/M* quartiles taken
+- further sample narrowing to rematch z distributions (median M* different by ~0.02 dex)

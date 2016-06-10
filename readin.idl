@@ -1,0 +1,19 @@
+	red
+	SFcolor = cgColor('blue')
+	Qcolor  = cgColor('red')
+	.compile getGALEXmassSFR.pro 
+	.compile mlimit.pro 
+	.compile mean_mlimit.pro
+;	.compile poissonError.pro
+	.compile sigmaRange.pro
+	.compile sigmaRange_JKE.pro
+;	.compile sigmaRange_BSE.pro 
+	.compile bigint.pro
+	.compile decimal.pro
+	.compile shuffle.pro
+	.compile getIPstats.pro
+	.compile grid_array.pro
+	.compile grid_array_deluxe.pro
+	.compile grid_array_deluxe_unequal.pro
+	zerodSFQ_cart = mrdfits('~/results/zerodSFQ_all_cart.fits', 1)
+	fields = zerodSFQ_cart[uniq(zerodSFQ_cart.field, sort(zerodSFQ_cart.field))].field

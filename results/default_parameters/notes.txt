@@ -1,0 +1,5 @@
+delta_v = H0 * delta_dprop (H0 * difference in proper LOS distance in Mpc)
+	dprop = dcomovinglos(z,/Mpc)/(1+z) = dz/redh100()/(1+z)
+	dz = comoving LOS distance in Mpc/h
+mass limit for IP candidate status is John's -0.5 dex ("...dm0.5.fits")
+mass limits do consider SF status (i.e. mass limit for given field and redshift is different for SF and Q galaxies)

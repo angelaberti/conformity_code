@@ -1,0 +1,52 @@
+;HAVE LATEFRAC DATA SAVED
+;conservative_mass_cutoff
+
+;variable_mass+0.5dex
+;variable_mass+0.8dex
+;variable_mass+1.0dex
+
+PRO norm_diff_plot
+	xmin = 0
+	xmax = 15
+	xr = xmax - xmin
+
+	ymin = -0.1
+	ymax = 0.5
+	yr = ymax - ymin
+
+	PLOT, findgen(10), findgen(10), xrange=[xmin,xmax], yrange=[ymin,ymax], /NODATA
+	
+	dataPaths = ['~/results/conservative_mass_cutoff/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0_dm0.0.fits']
+;	data = '~/results/variable_mass+' + string_dm + 'dex/latefrac_data_hist/latefrac_0.2_1.0_zerodSFQ_IP_dz2.0.fits'
+	
+	FOREACH, path,dataPaths DO BEGIN
+
+		data = mrdfits(path,1)
+
+		Rmax		= data.rmax
+		total_IPSF	= data.n_tot_IPSF
+		total_IPQ	= data.n_tot_IPQ
+		late_IPSF	= data.n_late_IPSF
+		late_IPQ	= data.n_late_IPQ
+
+		frac_IPSF	= float(late_IPSF)/total_IPSF
+		frac_IPQ	= float(late_IPQ)/total_IPQ
+
+		norm_diff	= (frac_IPSF - frac_IPQ)/((frac_IPSF + frac_IPQ)/2.)
+
+		OPLOT, Rmax, norm_diff
+	ENDFOREACH
+
+;LATEFRAC DATA GENERATED WHEN PROGRAM IS RUN
+;conservative_mass_median 	* TO DO *
+;conservative_mass_targ_weight 	* TO DO *
+
+;variable_mass+0.5dex_median
+;variable_mass+0.8dex_median
+;variable_mass+1.0dex_median
+
+;variable_mass+0.5dex_targ_weight
+;variable_mass+0.8dex_targ_weight
+;variable_mass+1.0dex_targ_weight
+
+END

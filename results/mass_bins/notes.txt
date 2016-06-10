@@ -1,0 +1,3 @@
+default cylinder depth: dz=0.005(1+z_IP)
+mass limit for IP candidate status is default: John's -0.5 dex ("...dm0.5.fits")
+mass limits do consider SF status (i.e. mass limit for given field and redshift is different for SF and Q galaxies)

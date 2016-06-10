@@ -1,0 +1,4 @@
+; develop rigorous high mass cutoff for matching SF and Q IP samples based on Moustakas13 stellar mass function
+	single cutoff for all fields
+; create matched IP samples field-by-field, applying same high mass cut (above) to each field
+; get late fraction statistics using binwidth of 1 Mpc (possibly others later)

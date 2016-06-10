@@ -1,0 +1,3 @@
+BSE: bootstrap error
+FBF: field-by-field
+	SF and Q IP samples with matching mass and redshift distributions are constructed for each field.
